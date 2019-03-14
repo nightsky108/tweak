@@ -923,29 +923,19 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fiveleaves" translatesAutoresizingMaskIntoConstraints="NO" id="86E-sO-gPj">
-                                                            <rect key="frame" x="7.6666666666666643" y="7" width="75" height="75"/>
+                                                            <rect key="frame" x="8" y="11.333333333333336" width="69.333333333333329" height="90.333333333333314"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="75" id="9o3-Vh-Dig"/>
-                                                                <constraint firstAttribute="width" constant="75" id="eal-Cq-WPq"/>
+                                                                <constraint firstAttribute="width" secondItem="86E-sO-gPj" secondAttribute="height" multiplier="23:30" id="W0U-wA-c5r"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MS1111" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKN-le-Kyj">
-                                                            <rect key="frame" x="8" y="89" width="74" height="16"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="cKN-le-Kyj" firstAttribute="leading" secondItem="tZL-m2-vam" secondAttribute="leadingMargin" id="AEl-4r-QDy"/>
-                                                    <constraint firstItem="86E-sO-gPj" firstAttribute="centerX" secondItem="tZL-m2-vam" secondAttribute="centerX" id="bD8-du-QaW"/>
-                                                    <constraint firstItem="cKN-le-Kyj" firstAttribute="trailing" secondItem="tZL-m2-vam" secondAttribute="trailingMargin" id="bVc-3O-16v"/>
-                                                    <constraint firstItem="86E-sO-gPj" firstAttribute="top" secondItem="tZL-m2-vam" secondAttribute="top" constant="7" id="jAd-Oq-Cvo"/>
-                                                    <constraint firstItem="cKN-le-Kyj" firstAttribute="bottom" secondItem="tZL-m2-vam" secondAttribute="bottomMargin" id="zSr-aX-Fju"/>
+                                                    <constraint firstItem="86E-sO-gPj" firstAttribute="height" secondItem="tZL-m2-vam" secondAttribute="height" multiplier="0.8:1" id="Exk-2V-qWc"/>
+                                                    <constraint firstItem="86E-sO-gPj" firstAttribute="centerY" secondItem="tZL-m2-vam" secondAttribute="centerY" id="Ihj-Xf-dIQ"/>
+                                                    <constraint firstItem="86E-sO-gPj" firstAttribute="leading" secondItem="tZL-m2-vam" secondAttribute="leadingMargin" id="cf9-6y-j75"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="filterName" destination="cKN-le-Kyj" id="C2x-dT-usr"/>
                                                     <outlet property="img" destination="86E-sO-gPj" id="sPn-Gb-wpK"/>
                                                 </connections>
                                             </collectionViewCell>

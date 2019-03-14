@@ -20,6 +20,7 @@ class ImageDetailViewController: UIViewController {
     @IBOutlet weak var filterCollectionView: UICollectionView!
     
 //    @IBOutlet weak var selectedImage: UIImageView!
+    var adjustActiveNo = 100
     var imageArray = [UIImage]()
     var image : UIImage?
     var currrentMenuState = "filter"
@@ -33,9 +34,30 @@ class ImageDetailViewController: UIViewController {
     var templateIcon = UIImage(named: "template.png")
     var templateIconActive = UIImage(named: "template-active.png")
     var removeImage = UIImage(named: "remove.png")
+    
     var exposureIcon = UIImage(named: "exposure.png")
     var contrastIcon = UIImage(named: "contrast.png")
-    var shadowsIcon = UIImage(named: "shadows.png")
+    var shadowsIcon = UIImage(named: "shadow.png")
+    var highlightsIcon = UIImage(named: "highlights.png")
+    var saturationIcon = UIImage(named: "saturation.png")
+    var grainIcon = UIImage(named: "grain.png")
+    var temperatureIcon = UIImage(named: "temperature.png")
+    var sharpenIcon = UIImage(named: "sharpen.png")
+    var straightenIcon = UIImage(named: "straighten.png")
+    var cropIcon = UIImage(named: "crop.png")
+    var clear_edit = UIImage(named: "clear_edit.png")
+    
+    var adjustArray = [UIImage(named: "curves.png"), UIImage(named: "tone.png"),
+                       UIImage(named: "exposure.png"), UIImage(named: "contrast.png"),
+                       UIImage(named: "shadow.png"), UIImage(named: "highlights.png"), UIImage(named: "saturation.png"), UIImage(named: "grain.png"), UIImage(named: "temperature.png"), UIImage(named: "sharpen.png"), UIImage(named: "straighten.png"), UIImage(named: "crop.png"), UIImage(named: "clear_edit.png")]
+    
+    var adjustActiveArray = [UIImage(named: "curves.png"), UIImage(named: "tone.png"),
+                             UIImage(named: "exposure-active.png"), UIImage(named: "contrast-active.png"),
+                             UIImage(named: "shadow-active.png"), UIImage(named: "highlights-active.png"),
+                             UIImage(named: "saturation-active.png"), UIImage(named: "grain-active.png"),
+                             UIImage(named: "temperature-active.png"), UIImage(named: "sharpen-active.png"),
+                             UIImage(named: "straighten-active.png"), UIImage(named: "crop-active.png"),
+                             UIImage(named: "clear_edit-active.png")]
     
     @IBAction func fiterAction(_ sender: Any) {
         self.currrentMenuState = "filter"
@@ -76,22 +98,8 @@ class ImageDetailViewController: UIViewController {
         super.viewDidLoad()
         self.filterCollectionView.delegate = self
         self.filterCollectionView.dataSource = self
-        
-        
-//        self.selectedImage.image = self.image
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -100,15 +108,22 @@ extension  ImageDetailViewController:UICollectionViewDelegate, UICollectionViewD
     
             let cell = filterCollectionView.dequeueReusableCell(withReuseIdentifier: "FilterCell", for: indexPath) as! FilterCell
             
-            cell.filterName.text = "filter";
+//            cell.filterName.text = "filter";
             if (self.currrentMenuState == "filter") {
                 cell.img.image = self.imageArray[indexPath.row]
-                cell.filterName.text = "filter"
+//                cell.filterName.text = "filter"
             }
             else if (self.currrentMenuState == "adjust")
             {
-                cell.img.image = self.image
-                cell.filterName.text = "adjust"
+                if (indexPath.row != self.adjustActiveNo) {
+                    cell.img.image = self.adjustArray[indexPath.row]
+                }
+                else {
+                    cell.img.image = self.adjustActiveArray[indexPath.row]
+                }
+                
+//                cell.filterName.text = ""
+                
             }
         
             return cell
@@ -116,7 +131,14 @@ extension  ImageDetailViewController:UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.imageArray.count
+        var count = 0;
+        if (self.currrentMenuState == "filter") {
+            count = self.imageArray.count
+        }
+        else if (self.currrentMenuState == "adjust") {
+            count = self.adjustArray.count
+        }
+        return count
     }
     
 }
@@ -124,13 +146,22 @@ extension  ImageDetailViewController:UICollectionViewDelegate, UICollectionViewD
 extension ImageDetailViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var height = 0.0
+        if (self.currrentMenuState == "filter") {
+            height = Double(filterCollectionView.frame.height * 0.8)
+        }
+        else {
+            height = Double(filterCollectionView.frame.height * 0.8)
+        }
         
-        let height = filterCollectionView.frame.height * 0.8
-        return CGSize(width: height, height: height)
+        return CGSize(width: height * 0.8, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
+        if (self.currrentMenuState == "adjust") {
+            self.adjustActiveNo = indexPath.row
+            filterCollectionView.reloadData()
+        }
     }
     
 
