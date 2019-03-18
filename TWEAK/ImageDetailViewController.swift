@@ -10,12 +10,12 @@ import UIKit
 
 class ImageDetailViewController: UIViewController {
    
-    @IBOutlet weak var removeButton: UIButton!
+
     
+    @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var templateButton: UIButton!
     @IBOutlet weak var canvasButton: UIButton!
     @IBOutlet weak var adjustButton: UIButton!
-    @IBOutlet weak var filterButton: UIButton!
     
     @IBOutlet weak var filterCollectionView: UICollectionView!
     
@@ -59,7 +59,7 @@ class ImageDetailViewController: UIViewController {
                              UIImage(named: "straighten-active.png"), UIImage(named: "crop-active.png"),
                              UIImage(named: "clear_edit-active.png")]
     
-    @IBAction func fiterAction(_ sender: Any) {
+    @IBAction func filterAction(_ sender: Any) {
         self.currrentMenuState = "filter"
         filterButton.setImage(filterIconActive, for: .normal)
         canvasButton.setImage(canvasIcon, for: .normal)
