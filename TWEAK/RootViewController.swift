@@ -191,9 +191,17 @@ class RootViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(displayTemplate), name: Notification.Name("template"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(displayPayment), name: Notification.Name("payment"), object: nil)
+        
         // Do any additional setup after loading the view.
     }
- 
+
+    @objc func displayPayment(notification: NSNotification) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let payment = main.instantiateViewController(withIdentifier: "PaymentViewController")
+        self.present(payment, animated: true, completion: nil)
+    }
+    
     @objc func displayAdjust(notification: NSNotification) {
         filterViewController.view.isHidden = true
         adjustViewController.view.isHidden = false

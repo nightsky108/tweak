@@ -20,7 +20,7 @@ class AdjustViewController: UIViewController {
                        UIImage(named: "exposure.png"), UIImage(named: "contrast.png"),
                        UIImage(named: "shadow.png"), UIImage(named: "highlights.png"), UIImage(named: "saturation.png"), UIImage(named: "grain.png"), UIImage(named: "temperature.png"), UIImage(named: "sharpen.png"), UIImage(named: "straighten.png"), UIImage(named: "crop.png"), UIImage(named: "clear_edit.png")]
     
-    var adjustActiveArray = [UIImage(named: "curves.png"), UIImage(named: "tone.png"),
+    var adjustActiveArray = [UIImage(named: "curve-active.png"), UIImage(named: "tone-active.png"),
                              UIImage(named: "exposure-active.png"), UIImage(named: "contrast-active.png"),
                              UIImage(named: "shadow-active.png"), UIImage(named: "highlights-active.png"),
                              UIImage(named: "saturation-active.png"), UIImage(named: "grain-active.png"),
@@ -59,7 +59,7 @@ class AdjustViewController: UIViewController {
 extension  AdjustViewController:UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = filterCollectionView.dequeueReusableCell(withReuseIdentifier: "FilterCell", for: indexPath) as! FilterCell
+        let cell = filterCollectionView.dequeueReusableCell(withReuseIdentifier: "AdjustCell", for: indexPath) as! AdjustCell
         if (indexPath.row != self.adjustActiveNo) {
             cell.img.image = self.adjustArray[indexPath.row]
         }
@@ -95,6 +95,9 @@ extension AdjustViewController: UICollectionViewDelegateFlowLayout {
         }
         else if (indexPath.row == 1) {
             NotificationCenter.default.post(name: Notification.Name("tone"), object: nil)
+        }
+        else if (indexPath.row == self.adjustArray.count - 1) {
+            NotificationCenter.default.post(name: Notification.Name("payment"), object: nil)
         }
             self.sliderView.isHidden = false
 //            let heiConstraint = NSLayoutConstraint(item: sliderView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 56.0)

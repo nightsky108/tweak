@@ -10,9 +10,49 @@ import UIKit
 
 class CurveViewController: UIViewController {
 
+    @IBOutlet weak var rgbButton: UIButton!
+    @IBOutlet weak var redButton: UIButton!
+    @IBOutlet weak var greenButton: UIButton!
+    @IBOutlet weak var blueButton: UIButton!
+    
+    var rgbIcon = UIImage(named: "rgb.png")
+    var rgbIconActive = UIImage(named: "rgb-active.png")
+    var redIcon = UIImage(named: "red.png")
+    var redIconActive = UIImage(named: "red-active.png")
+    var greenIcon = UIImage(named: "green.png")
+    var greenIconActive = UIImage(named: "green-active.png")
+    var blueIcon = UIImage(named: "blue.png")
+    var blueIconActive = UIImage(named: "blue-active.png")
+    var removeImage = UIImage(named: "remove.png")
+    
+    @IBAction func blueProcess(_ sender: Any) {
+        rgbButton.setImage(rgbIcon, for: .normal)
+        redButton.setImage(redIcon, for: .normal)
+        greenButton.setImage(greenIcon, for: .normal)
+        blueButton.setImage(blueIconActive, for: .normal)
+    }
+    @IBAction func greenProcess(_ sender: Any) {
+        rgbButton.setImage(rgbIcon, for: .normal)
+        redButton.setImage(redIcon, for: .normal)
+        greenButton.setImage(greenIconActive, for: .normal)
+        blueButton.setImage(blueIcon, for: .normal)
+    }
+    @IBAction func redProcess(_ sender: Any) {
+        rgbButton.setImage(rgbIcon, for: .normal)
+        redButton.setImage(redIconActive, for: .normal)
+        greenButton.setImage(greenIcon, for: .normal)
+        blueButton.setImage(blueIcon, for: .normal)
+    }
+    @IBAction func rgbProcess(_ sender: Any) {
+        rgbButton.setImage(rgbIconActive, for: .normal)
+        redButton.setImage(redIcon, for: .normal)
+        greenButton.setImage(greenIcon, for: .normal)
+        blueButton.setImage(blueIcon, for: .normal)
+    }
     @IBAction func done(_ sender: Any) {
         NotificationCenter.default.post(name: Notification.Name("adjust"), object: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

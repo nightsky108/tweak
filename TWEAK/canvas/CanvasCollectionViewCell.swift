@@ -1,21 +1,19 @@
 //
-//  FilterCell.swift
+//  CanvasCollectionViewCell.swift
 //  TWEAK
 //
-//  Created by ujs on 3/11/19.
+//  Created by ujs on 3/19/19.
 //  Copyright © 2019 yg. All rights reserved.
 //
 
 import UIKit
 
-class FilterCell: UICollectionViewCell {
+class CanvasCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var canvasName: UILabel!
-    @IBOutlet weak var canvasImg: UIImageView!
-    @IBOutlet weak var filterName: UILabel!
     @IBOutlet weak var img: UIImageView!
+    
     override func awakeFromNib() {
-       
         super.awakeFromNib()
         // Initialization code
     }

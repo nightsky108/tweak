@@ -32,6 +32,22 @@
 		7D23BD1E22401ED700A26B65 /* TemplateTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23BD1D22401ED700A26B65 /* TemplateTypeViewController.swift */; };
 		7D23BD2022401EF000A26B65 /* TemplateColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23BD1F22401EF000A26B65 /* TemplateColorViewController.swift */; };
 		7D23BD2222401F0A00A26B65 /* TemplateTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23BD2122401F0A00A26B65 /* TemplateTextViewController.swift */; };
+		7D23BD242240811600A26B65 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23BD232240811600A26B65 /* PaymentViewController.swift */; };
+		7D23BD262240C0C700A26B65 /* green-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD252240C0C500A26B65 /* green-active.png */; };
+		7D23BD2D2240C0F200A26B65 /* red-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD272240C0E900A26B65 /* red-active.png */; };
+		7D23BD2E2240C0F200A26B65 /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD282240C0EA00A26B65 /* blue.png */; };
+		7D23BD2F2240C0F200A26B65 /* green-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD292240C0EC00A26B65 /* green-active.png */; };
+		7D23BD302240C0F200A26B65 /* blue-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD2A2240C0EC00A26B65 /* blue-active.png */; };
+		7D23BD312240C0F200A26B65 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD2B2240C0EE00A26B65 /* red.png */; };
+		7D23BD322240C0F200A26B65 /* rgb.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD2C2240C0F000A26B65 /* rgb.png */; };
+		7D23BD352240C16500A26B65 /* red-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD332240C16400A26B65 /* red-active.png */; };
+		7D23BD362240C16500A26B65 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD342240C16500A26B65 /* red.png */; };
+		7D23BD382240C1B500A26B65 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD372240C1B300A26B65 /* green.png */; };
+		7D23BD3A2240C5D700A26B65 /* rgb-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD392240C5D500A26B65 /* rgb-active.png */; };
+		7D23BD3E2240CDB000A26B65 /* CanvasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23BD3C2240CDB000A26B65 /* CanvasCollectionViewCell.swift */; };
+		7D23BD3F2240CDB000A26B65 /* CanvasCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD3D2240CDB000A26B65 /* CanvasCollectionViewCell.xib */; };
+		7D23BD4122413EA100A26B65 /* tone-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD4022413EA100A26B65 /* tone-active.png */; };
+		7D23BD4322413EB300A26B65 /* curve-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D23BD4222413EB300A26B65 /* curve-active.png */; };
 		7D34869F223264A100070BF9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D34869E223264A100070BF9 /* TabBarController.swift */; };
 		7D3AF1E822345BE700A3FD46 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3AF1E722345BE700A3FD46 /* FirstScreenViewController.swift */; };
 		7D3AF1EA22346B8900A3FD46 /* ProjectBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3AF1E922346B8900A3FD46 /* ProjectBrowserViewController.swift */; };
@@ -79,7 +95,6 @@
 		7D5B9AFE223AA3CE00C27382 /* tone.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D5B9AFD223AA3CD00C27382 /* tone.png */; };
 		7D5B9B00223AA69E00C27382 /* curves.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D5B9AFF223AA69E00C27382 /* curves.png */; };
 		7D7B165C223CA59C00A6C6B2 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D7B165B223CA59C00A6C6B2 /* splash.png */; };
-		7D7B165E223DF0FB00A6C6B2 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D7B165D223DF0FB00A6C6B2 /* red.png */; };
 		7D7B1660223E20F900A6C6B2 /* hue_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D7B165F223E20F700A6C6B2 /* hue_active.png */; };
 		7D7B1662223E210500A6C6B2 /* luminance.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D7B1661223E210500A6C6B2 /* luminance.png */; };
 		7D7B1664223E211300A6C6B2 /* saturation.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D7B1663223E211200A6C6B2 /* saturation.png */; };
@@ -126,6 +141,22 @@
 		7D23BD1D22401ED700A26B65 /* TemplateTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTypeViewController.swift; sourceTree = "<group>"; };
 		7D23BD1F22401EF000A26B65 /* TemplateColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateColorViewController.swift; sourceTree = "<group>"; };
 		7D23BD2122401F0A00A26B65 /* TemplateTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateTextViewController.swift; sourceTree = "<group>"; };
+		7D23BD232240811600A26B65 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		7D23BD252240C0C500A26B65 /* green-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "green-active.png"; path = "TWEAK/RGB/green-active.png"; sourceTree = SOURCE_ROOT; };
+		7D23BD272240C0E900A26B65 /* red-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red-active.png"; path = "TWEAK/RGB/red-active.png"; sourceTree = SOURCE_ROOT; };
+		7D23BD282240C0EA00A26B65 /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue.png; path = TWEAK/RGB/blue.png; sourceTree = SOURCE_ROOT; };
+		7D23BD292240C0EC00A26B65 /* green-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "green-active.png"; path = "TWEAK/RGB/green-active.png"; sourceTree = SOURCE_ROOT; };
+		7D23BD2A2240C0EC00A26B65 /* blue-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blue-active.png"; path = "TWEAK/RGB/blue-active.png"; sourceTree = SOURCE_ROOT; };
+		7D23BD2B2240C0EE00A26B65 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red.png; path = TWEAK/RGB/red.png; sourceTree = SOURCE_ROOT; };
+		7D23BD2C2240C0F000A26B65 /* rgb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rgb.png; path = TWEAK/RGB/rgb.png; sourceTree = SOURCE_ROOT; };
+		7D23BD332240C16400A26B65 /* red-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red-active.png"; path = "TWEAK/RGB/red-active.png"; sourceTree = SOURCE_ROOT; };
+		7D23BD342240C16500A26B65 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red.png; path = TWEAK/RGB/red.png; sourceTree = SOURCE_ROOT; };
+		7D23BD372240C1B300A26B65 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = green.png; path = TWEAK/RGB/green.png; sourceTree = SOURCE_ROOT; };
+		7D23BD392240C5D500A26B65 /* rgb-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rgb-active.png"; path = "TWEAK/RGB/rgb-active.png"; sourceTree = SOURCE_ROOT; };
+		7D23BD3C2240CDB000A26B65 /* CanvasCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasCollectionViewCell.swift; sourceTree = "<group>"; };
+		7D23BD3D2240CDB000A26B65 /* CanvasCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CanvasCollectionViewCell.xib; sourceTree = "<group>"; };
+		7D23BD4022413EA100A26B65 /* tone-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tone-active.png"; path = "TWEAK/RGB/tone-active.png"; sourceTree = SOURCE_ROOT; };
+		7D23BD4222413EB300A26B65 /* curve-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "curve-active.png"; path = "TWEAK/RGB/curve-active.png"; sourceTree = SOURCE_ROOT; };
 		7D34869E223264A100070BF9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7D3AF1E722345BE700A3FD46 /* FirstScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
 		7D3AF1E922346B8900A3FD46 /* ProjectBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectBrowserViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +204,6 @@
 		7D5B9AFD223AA3CD00C27382 /* tone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tone.png; path = TWEAK/image/tone.png; sourceTree = SOURCE_ROOT; };
 		7D5B9AFF223AA69E00C27382 /* curves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = curves.png; path = TWEAK/image/curves.png; sourceTree = SOURCE_ROOT; };
 		7D7B165B223CA59C00A6C6B2 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = TWEAK/image/splash.png; sourceTree = SOURCE_ROOT; };
-		7D7B165D223DF0FB00A6C6B2 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red.png; path = TWEAK/image/red.png; sourceTree = SOURCE_ROOT; };
 		7D7B165F223E20F700A6C6B2 /* hue_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hue_active.png; path = TWEAK/RGB/hue_active.png; sourceTree = SOURCE_ROOT; };
 		7D7B1661223E210500A6C6B2 /* luminance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = luminance.png; path = TWEAK/RGB/luminance.png; sourceTree = SOURCE_ROOT; };
 		7D7B1663223E211200A6C6B2 /* saturation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = saturation.png; path = TWEAK/RGB/saturation.png; sourceTree = SOURCE_ROOT; };
@@ -222,6 +252,7 @@
 		7D10BAAD222F609100632B13 /* TWEAK */ = {
 			isa = PBXGroup;
 			children = (
+				7D23BD3B2240CD9200A26B65 /* canvas */,
 				7D5B9AA4223A007C00C27382 /* resources */,
 				7DA4B9412238B2DA00DEB50E /* adjustCell */,
 				7D9100102237679500E8FE4C /* FilterCell */,
@@ -247,6 +278,7 @@
 				7D23BD1D22401ED700A26B65 /* TemplateTypeViewController.swift */,
 				7D23BD1F22401EF000A26B65 /* TemplateColorViewController.swift */,
 				7D23BD2122401F0A00A26B65 /* TemplateTextViewController.swift */,
+				7D23BD232240811600A26B65 /* PaymentViewController.swift */,
 			);
 			path = TWEAK;
 			sourceTree = "<group>";
@@ -258,6 +290,15 @@
 				7D10BAC5222F623300632B13 /* ItemCell.xib */,
 			);
 			path = ItemCell;
+			sourceTree = "<group>";
+		};
+		7D23BD3B2240CD9200A26B65 /* canvas */ = {
+			isa = PBXGroup;
+			children = (
+				7D23BD3C2240CDB000A26B65 /* CanvasCollectionViewCell.swift */,
+				7D23BD3D2240CDB000A26B65 /* CanvasCollectionViewCell.xib */,
+			);
+			path = canvas;
 			sourceTree = "<group>";
 		};
 		7D5B9AA4223A007C00C27382 /* resources */ = {
@@ -275,10 +316,12 @@
 				7D5B9AC1223A00D100C27382 /* canvas.png */,
 				7D5B9AA9223A00BB00C27382 /* check-icon.png */,
 				7D07A620223ECBD100C53036 /* right.png */,
+				7D23BD4222413EB300A26B65 /* curve-active.png */,
 				7D7B165F223E20F700A6C6B2 /* hue_active.png */,
 				7D07A622223ECC1200C53036 /* center.png */,
 				7DC66E10223F3B2A00E26D30 /* monthly.png */,
 				7DC66E14223F3C9000E26D30 /* water.png */,
+				7D23BD4022413EA100A26B65 /* tone-active.png */,
 				7DC66E11223F3B2B00E26D30 /* payment-slider.png */,
 				7DC66E0E223F3B1B00E26D30 /* yearly.png */,
 				7D07A61E223ECB3400C53036 /* left.png */,
@@ -304,6 +347,7 @@
 				7D5B9AB2223A00C300C27382 /* download-icon.png */,
 				7D5B9ABF223A00CF00C27382 /* exposure-active.png */,
 				7D5B9AA8223A00BB00C27382 /* exposure.png */,
+				7D23BD252240C0C500A26B65 /* green-active.png */,
 				7D5B9AA6223A00B900C27382 /* filter-active.png */,
 				7D5B9AA5223A00B900C27382 /* filter.png */,
 				7D5B9AC9223A00D700C27382 /* grain.png */,
@@ -311,17 +355,26 @@
 				7D5B9AB0223A00C100C27382 /* highlights-active.png */,
 				7D5B9AC0223A00D000C27382 /* highlights.png */,
 				7D5B9AC3223A00D300C27382 /* menu.png */,
+				7D23BD2A2240C0EC00A26B65 /* blue-active.png */,
+				7D23BD282240C0EA00A26B65 /* blue.png */,
+				7D23BD292240C0EC00A26B65 /* green-active.png */,
+				7D23BD272240C0E900A26B65 /* red-active.png */,
+				7D23BD2B2240C0EE00A26B65 /* red.png */,
+				7D23BD2C2240C0F000A26B65 /* rgb.png */,
 				7D5B9AFD223AA3CD00C27382 /* tone.png */,
 				7D5B9AAA223A00BC00C27382 /* redo-icon.png */,
 				7D5B9ACD223A00DA00C27382 /* remove-icon.png */,
 				7D5B9ABD223A00CE00C27382 /* saturation-active.png */,
-				7D7B165D223DF0FB00A6C6B2 /* red.png */,
 				7D5B9AA7223A00BA00C27382 /* shadow-active.png */,
+				7D23BD372240C1B300A26B65 /* green.png */,
 				7D5B9AFF223AA69E00C27382 /* curves.png */,
 				7D5B9ABE223A00CE00C27382 /* shadow.png */,
+				7D23BD392240C5D500A26B65 /* rgb-active.png */,
 				7D5B9AF9223AA36600C27382 /* straighten.png */,
 				7D5B9AC8223A00D700C27382 /* sharpen-active.png */,
 				7D5B9AB8223A00C900C27382 /* sharpen.png */,
+				7D23BD332240C16400A26B65 /* red-active.png */,
+				7D23BD342240C16500A26B65 /* red.png */,
 				7D5B9ACE223A00DB00C27382 /* straighten-active.png */,
 				7D5B9AB6223A00C700C27382 /* temperature-active.png */,
 				7D5B9ABC223A00CD00C27382 /* temperature.png */,
@@ -415,8 +468,10 @@
 				7D5B9AE8223A00DC00C27382 /* shadow.png in Resources */,
 				7D5B9AF1223A00DC00C27382 /* contrast-active.png in Resources */,
 				7D5B9AED223A00DC00C27382 /* menu.png in Resources */,
+				7D23BD382240C1B500A26B65 /* green.png in Resources */,
 				7D5B9ADD223A00DC00C27382 /* canvas-active.png in Resources */,
 				7D5B9ACF223A00DC00C27382 /* filter.png in Resources */,
+				7D23BD2E2240C0F200A26B65 /* blue.png in Resources */,
 				7D5B9AF5223A00DC00C27382 /* app-intro-top.png in Resources */,
 				7D07A61D223ECB0C00C53036 /* water.png in Resources */,
 				7D5B9AE3223A00DC00C27382 /* contrast.png in Resources */,
@@ -431,8 +486,9 @@
 				7D5B9AE7223A00DC00C27382 /* saturation-active.png in Resources */,
 				7D0A423A223E942900B3CF45 /* plus-template.png in Resources */,
 				7D7B1662223E210500A6C6B2 /* luminance.png in Resources */,
-				7D7B165E223DF0FB00A6C6B2 /* red.png in Resources */,
+				7D23BD302240C0F200A26B65 /* blue-active.png in Resources */,
 				7D5B9AE2223A00DC00C27382 /* sharpen.png in Resources */,
+				7D23BD4322413EB300A26B65 /* curve-active.png in Resources */,
 				7D5B9AE6223A00DC00C27382 /* temperature.png in Resources */,
 				7D7B1664223E211300A6C6B2 /* saturation.png in Resources */,
 				7D07A621223ECBD200C53036 /* right.png in Resources */,
@@ -441,6 +497,7 @@
 				7D7B166C223E865000A6C6B2 /* full-screen.png in Resources */,
 				7D5B9AFE223AA3CE00C27382 /* tone.png in Resources */,
 				7D5B9AD9223A00DC00C27382 /* adjust-active.png in Resources */,
+				7D23BD4122413EA100A26B65 /* tone-active.png in Resources */,
 				7D5B9AEF223A00DC00C27382 /* back-icon.png in Resources */,
 				7D5B9AD2223A00DC00C27382 /* exposure.png in Resources */,
 				7D5B9AF3223A00DC00C27382 /* grain.png in Resources */,
@@ -448,20 +505,27 @@
 				7D5B9AD0223A00DC00C27382 /* filter-active.png in Resources */,
 				7D0A423C223EA13000B3CF45 /* add-template.png in Resources */,
 				7D10BAB9222F609500632B13 /* Assets.xcassets in Resources */,
+				7D23BD3A2240C5D700A26B65 /* rgb-active.png in Resources */,
 				7D0A4238223E8C9400B3CF45 /* saturation.png in Resources */,
 				7D7B1668223E81CA00A6C6B2 /* text.png in Resources */,
 				7D5B9AD4223A00DC00C27382 /* redo-icon.png in Resources */,
+				7D23BD2D2240C0F200A26B65 /* red-active.png in Resources */,
+				7D23BD312240C0F200A26B65 /* red.png in Resources */,
 				7D5B9ADB223A00DC00C27382 /* crop.png in Resources */,
 				7D5B9AEA223A00DC00C27382 /* highlights.png in Resources */,
+				7D23BD262240C0C700A26B65 /* green-active.png in Resources */,
 				7D7B165C223CA59C00A6C6B2 /* splash.png in Resources */,
+				7D23BD322240C0F200A26B65 /* rgb.png in Resources */,
 				7DC66E13223F3B2C00E26D30 /* payment-slider.png in Resources */,
 				7D10BAB4222F609100632B13 /* Main.storyboard in Resources */,
+				7D23BD2F2240C0F200A26B65 /* green-active.png in Resources */,
 				7D5B9AE0223A00DC00C27382 /* temperature-active.png in Resources */,
 				7DA4B9452238B30A00DEB50E /* AdjustCell.xib in Resources */,
 				7D7B166A223E81CA00A6C6B2 /* zoom-out.png in Resources */,
 				7D07A61F223ECB3400C53036 /* left.png in Resources */,
 				7D5B9AF6223A00DC00C27382 /* clear_edit.png in Resources */,
 				7D5B9AD7223A00DC00C27382 /* crop-active.png in Resources */,
+				7D23BD3F2240CDB000A26B65 /* CanvasCollectionViewCell.xib in Resources */,
 				7D5B9AEB223A00DC00C27382 /* canvas.png in Resources */,
 				7D5B9AD8223A00DC00C27382 /* album.png in Resources */,
 				7D5B9AD5223A00DC00C27382 /* template-active.png in Resources */,
@@ -473,6 +537,8 @@
 				7D5B9AFA223AA36600C27382 /* straighten.png in Resources */,
 				7D5B9ADF223A00DC00C27382 /* app-intro-bottom.png in Resources */,
 				7D5B9AE1223A00DC00C27382 /* grain-active.png in Resources */,
+				7D23BD352240C16500A26B65 /* red-active.png in Resources */,
+				7D23BD362240C16500A26B65 /* red.png in Resources */,
 				7D5B9AEC223A00DC00C27382 /* template.png in Resources */,
 				7D5B9AEE223A00DC00C27382 /* clear_edit-active.png in Resources */,
 			);
@@ -487,11 +553,13 @@
 			files = (
 				7DA4B9442238B30A00DEB50E /* AdjustCell.swift in Sources */,
 				7D10BAC6222F623300632B13 /* ItemCell.swift in Sources */,
+				7D23BD3E2240CDB000A26B65 /* CanvasCollectionViewCell.swift in Sources */,
 				7D23BD1E22401ED700A26B65 /* TemplateTypeViewController.swift in Sources */,
 				7D3AF1E822345BE700A3FD46 /* FirstScreenViewController.swift in Sources */,
 				7DC66E17223F872E00E26D30 /* RootViewController.swift in Sources */,
 				7D23BD2022401EF000A26B65 /* TemplateColorViewController.swift in Sources */,
 				7D23BD14223FD25F00A26B65 /* CanvasViewController.swift in Sources */,
+				7D23BD242240811600A26B65 /* PaymentViewController.swift in Sources */,
 				7D3AF1EA22346B8900A3FD46 /* ProjectBrowserViewController.swift in Sources */,
 				7D23BD16223FD29500A26B65 /* TemplateViewController.swift in Sources */,
 				7D10BAB1222F609100632B13 /* ViewController.swift in Sources */,
