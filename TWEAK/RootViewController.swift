@@ -105,6 +105,7 @@ class RootViewController: UIViewController {
     lazy var filterViewController: FilterViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "FilterViewController") as! FilterViewController
+        viewController.image = self.image
         self.addViewControllerAsChildViewController(childViewController: viewController)
         return viewController
     }()
@@ -112,6 +113,7 @@ class RootViewController: UIViewController {
     lazy var adjustViewController: AdjustViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "AdjustViewController") as! AdjustViewController
+        viewController.image = self.image
         self.addViewControllerAsChildViewController(childViewController: viewController)
         return viewController
     }()
@@ -119,6 +121,7 @@ class RootViewController: UIViewController {
     lazy var canvasViewController: CanvasViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "CanvasViewController") as! CanvasViewController
+        viewController.image = self.image
         self.addViewControllerAsChildViewController(childViewController: viewController)
         return viewController
     }()
@@ -126,6 +129,7 @@ class RootViewController: UIViewController {
     lazy var templateViewController: TemplateViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "TemplateViewController") as! TemplateViewController
+        viewController.image = self.image
         self.addViewControllerAsChildViewController(childViewController: viewController)
         return viewController
     }()
@@ -133,6 +137,7 @@ class RootViewController: UIViewController {
     lazy var curveViewController: CurveViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "CurveViewController") as! CurveViewController
+        viewController.image = self.image
         self.addViewControllerAsChildViewController(childViewController: viewController)
         return viewController
     }()
@@ -140,6 +145,7 @@ class RootViewController: UIViewController {
     lazy var toneViewController: ToneViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "ToneViewController") as! ToneViewController
+        viewController.image = self.image
         self.addViewControllerAsChildViewController(childViewController: viewController)
         return viewController
     }()
@@ -147,6 +153,7 @@ class RootViewController: UIViewController {
     lazy var templateTypeViewController: TemplateTypeViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "TemplateTypeViewController") as! TemplateTypeViewController
+        viewController.image = self.image
         self.addViewControllerAsChildViewController(childViewController: viewController)
         return viewController
     }()
@@ -154,6 +161,7 @@ class RootViewController: UIViewController {
     lazy var templateColorViewController: TemplateColorViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "TemplateColorViewController") as! TemplateColorViewController
+        viewController.image = self.image
         self.addViewControllerAsChildViewController(childViewController: viewController)
         return viewController
     }()
@@ -161,6 +169,7 @@ class RootViewController: UIViewController {
     lazy var templateTextViewController: TemplateTextViewController = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewController = storyboard.instantiateViewController(withIdentifier: "TemplateTextViewController") as! TemplateTextViewController
+        viewController.image = self.image
         self.addViewControllerAsChildViewController(childViewController: viewController)
         return viewController
     }()
@@ -193,12 +202,20 @@ class RootViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(displayPayment), name: Notification.Name("payment"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(displayHome), name: Notification.Name("home"), object: nil)
+        
         // Do any additional setup after loading the view.
     }
 
     @objc func displayPayment(notification: NSNotification) {
         let main = UIStoryboard(name: "Main", bundle: nil)
         let payment = main.instantiateViewController(withIdentifier: "PaymentViewController")
+        self.present(payment, animated: true, completion: nil)
+    }
+    
+    @objc func displayHome(notification: NSNotification) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let payment = main.instantiateViewController(withIdentifier: "ViewController")
         self.present(payment, animated: true, completion: nil)
     }
     

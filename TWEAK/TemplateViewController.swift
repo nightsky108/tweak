@@ -10,6 +10,7 @@ import UIKit
 
 class TemplateViewController: UIViewController {
 
+    var image : UIImage?
     @IBAction func goToTemplateText(_ sender: Any) {
         NotificationCenter.default.post(name: Notification.Name("templateText"), object: nil)
     }

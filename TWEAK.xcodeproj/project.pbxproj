@@ -23,6 +23,7 @@
 		7D10BABC222F609500632B13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D10BABA222F609500632B13 /* LaunchScreen.storyboard */; };
 		7D10BAC6222F623300632B13 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BAC4222F623300632B13 /* ItemCell.swift */; };
 		7D10BAC7222F623300632B13 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D10BAC5222F623300632B13 /* ItemCell.xib */; };
+		7D20D53A22493665001C3562 /* slider-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D20D53922493665001C3562 /* slider-3.png */; };
 		7D23BD12223FD1ED00A26B65 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23BD11223FD1ED00A26B65 /* FilterViewController.swift */; };
 		7D23BD14223FD25F00A26B65 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23BD13223FD25F00A26B65 /* CanvasViewController.swift */; };
 		7D23BD16223FD29500A26B65 /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23BD15223FD29500A26B65 /* TemplateViewController.swift */; };
@@ -132,6 +133,7 @@
 		7D10BABD222F609500632B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D10BAC4222F623300632B13 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		7D10BAC5222F623300632B13 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		7D20D53922493665001C3562 /* slider-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-3.png"; path = "TWEAK/RGB/slider-3.png"; sourceTree = SOURCE_ROOT; };
 		7D23BD11223FD1ED00A26B65 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		7D23BD13223FD25F00A26B65 /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		7D23BD15223FD29500A26B65 /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				7D5B9AB3223A00C400C27382 /* canvas-active.png */,
 				7D5B9AC1223A00D100C27382 /* canvas.png */,
 				7D5B9AA9223A00BB00C27382 /* check-icon.png */,
+				7D20D53922493665001C3562 /* slider-3.png */,
 				7D07A620223ECBD100C53036 /* right.png */,
 				7D23BD4222413EB300A26B65 /* curve-active.png */,
 				7D7B165F223E20F700A6C6B2 /* hue_active.png */,
@@ -460,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D5B9AD1223A00DC00C27382 /* shadow-active.png in Resources */,
+				7D20D53A22493665001C3562 /* slider-3.png in Resources */,
 				7D10BAC7222F623300632B13 /* ItemCell.xib in Resources */,
 				7DC66E15223F3C9000E26D30 /* water.png in Resources */,
 				7D5B9AF0223A00DC00C27382 /* collection-left.png in Resources */,

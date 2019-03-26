@@ -128,7 +128,7 @@ extension ProjectBrowserViewController: UICollectionViewDataSource {
 extension ProjectBrowserViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.calculateWith()
-        let height = CGFloat(width * 1.5)
+        let height = CGFloat(width * 1.2)
         return CGSize(width: width, height: height)
     }
     

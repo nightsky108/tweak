@@ -22,14 +22,14 @@ class ViewController: UIViewController {
     var imageArray = [UIImage]()
     var selectedCellNo = IndexPath(row: 90, section: 0)
     @IBAction func gotoDetail(_ sender: Any) {
-//        performSegue(withIdentifier: "imageFilter", sender: self)
+        performSegue(withIdentifier: "imageFilter", sender: self)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let vc = segue.destination as! ImageDetailViewController
-//        vc.imageArray = self.imageArray
-//        vc.image = self.imageArray[self.selectedCellNo.row]
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! RootViewController
+        vc.imageArray = self.imageArray
+        vc.image = self.imageArray[self.selectedCellNo.row]
+    }
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
             if fetchResult.count > 0 {
                 for i in 0..<fetchResult.count {
                     imgManager.requestImage(for: fetchResult.object(at: i) as PHAsset, targetSize: CGSize(width: 300, height: 300),
-                                            contentMode: .aspectFill, options: requeestOptions, resultHandler: { (image, error) in self.imageArray.append(image!)
+                                            contentMode: .aspectFit, options: requeestOptions, resultHandler: { (image, error) in self.imageArray.append(image!)
                     })
                 }
             } else {

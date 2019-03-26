@@ -10,11 +10,14 @@ import UIKit
 
 class TemplateColorViewController: UIViewController {
 
+    @IBOutlet weak var selectedImage: UIImageView!
+    var image : UIImage?
     @IBAction func dismiss(_ sender: UIButton) {
         NotificationCenter.default.post(name: Notification.Name("template"), object: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.selectedImage.image = self.image
 
         // Do any additional setup after loading the view.
     }

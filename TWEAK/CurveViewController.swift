@@ -10,10 +10,12 @@ import UIKit
 
 class CurveViewController: UIViewController {
 
+    @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var rgbButton: UIButton!
     @IBOutlet weak var redButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
     @IBOutlet weak var blueButton: UIButton!
+    var image : UIImage?
     
     var rgbIcon = UIImage(named: "rgb.png")
     var rgbIconActive = UIImage(named: "rgb-active.png")
@@ -55,6 +57,7 @@ class CurveViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.selectedImage.image = self.image
 
         // Do any additional setup after loading the view.
     }
