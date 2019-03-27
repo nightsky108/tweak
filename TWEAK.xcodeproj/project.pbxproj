@@ -20,7 +20,6 @@
 		7D10BAC7222F623300632B13 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D10BAC5222F623300632B13 /* ItemCell.xib */; };
 		7D2136C3224B558400FB8242 /* red-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136C2224B558300FB8242 /* red-active.png */; };
 		7D2136CE224B56D600FB8242 /* add-photo-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136C5224B56D500FB8242 /* add-photo-btn.png */; };
-		7D2136D1224B56D600FB8242 /* plus-template.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136C8224B56D600FB8242 /* plus-template.png */; };
 		7D2136D9224B5B6900FB8242 /* adjust.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136D8224B5B6900FB8242 /* adjust.png */; };
 		7D2136DB224B5B7300FB8242 /* adjust-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136DA224B5B7300FB8242 /* adjust-active.png */; };
 		7D2136DD224B5B8200FB8242 /* canvas.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136DC224B5B8200FB8242 /* canvas.png */; };
@@ -40,6 +39,7 @@
 		7D2136FB224B5F5000FB8242 /* center.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136FA224B5F4D00FB8242 /* center.png */; };
 		7D2136FD224B5F5700FB8242 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136FC224B5F5500FB8242 /* right.png */; };
 		7D2136FF224B5F6300FB8242 /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136FE224B5F6100FB8242 /* water.png */; };
+		7D213701224B64F300FB8242 /* plus-template.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D213700224B64F300FB8242 /* plus-template.png */; };
 		7D23BD12223FD1ED00A26B65 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23BD11223FD1ED00A26B65 /* FilterViewController.swift */; };
 		7D23BD14223FD25F00A26B65 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23BD13223FD25F00A26B65 /* CanvasViewController.swift */; };
 		7D23BD16223FD29500A26B65 /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D23BD15223FD29500A26B65 /* TemplateViewController.swift */; };
@@ -124,7 +124,6 @@
 		7D10BAC5222F623300632B13 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		7D2136C2224B558300FB8242 /* red-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red-active.png"; path = "TWEAK/RGB/red-active.png"; sourceTree = SOURCE_ROOT; };
 		7D2136C5224B56D500FB8242 /* add-photo-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-photo-btn.png"; sourceTree = "<group>"; };
-		7D2136C8224B56D600FB8242 /* plus-template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plus-template.png"; path = "../../../image/plus-template.png"; sourceTree = "<group>"; };
 		7D2136D8224B5B6900FB8242 /* adjust.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = adjust.png; path = dev/adjust.png; sourceTree = SOURCE_ROOT; };
 		7D2136DA224B5B7300FB8242 /* adjust-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "adjust-active.png"; path = "dev/adjust-active.png"; sourceTree = SOURCE_ROOT; };
 		7D2136DC224B5B8200FB8242 /* canvas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = canvas.png; path = dev/canvas.png; sourceTree = SOURCE_ROOT; };
@@ -144,6 +143,7 @@
 		7D2136FA224B5F4D00FB8242 /* center.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = center.png; path = RGB/center.png; sourceTree = SOURCE_ROOT; };
 		7D2136FC224B5F5500FB8242 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = right.png; path = RGB/right.png; sourceTree = SOURCE_ROOT; };
 		7D2136FE224B5F6100FB8242 /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = water.png; path = RGB/water.png; sourceTree = SOURCE_ROOT; };
+		7D213700224B64F300FB8242 /* plus-template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plus-template.png"; path = "RGB/plus-template.png"; sourceTree = SOURCE_ROOT; };
 		7D23BD11223FD1ED00A26B65 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		7D23BD13223FD25F00A26B65 /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		7D23BD15223FD29500A26B65 /* TemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
@@ -328,8 +328,8 @@
 				7D2136FE224B5F6100FB8242 /* water.png */,
 				7D2136DC224B5B8200FB8242 /* canvas.png */,
 				7D2136FC224B5F5500FB8242 /* right.png */,
+				7D213700224B64F300FB8242 /* plus-template.png */,
 				7D2136C5224B56D500FB8242 /* add-photo-btn.png */,
-				7D2136C8224B56D600FB8242 /* plus-template.png */,
 				7D2136D8224B5B6900FB8242 /* adjust.png */,
 				7D2136E4224B5C8A00FB8242 /* curve-active.png */,
 				7D7B1665223E81C800A6C6B2 /* text.png */,
@@ -487,7 +487,6 @@
 				7D7B166C223E865000A6C6B2 /* full-screen.png in Resources */,
 				7D5B9AFE223AA3CE00C27382 /* tone.png in Resources */,
 				7D5B9AD2223A00DC00C27382 /* exposure.png in Resources */,
-				7D2136D1224B56D600FB8242 /* plus-template.png in Resources */,
 				7D5B9AF3223A00DC00C27382 /* grain.png in Resources */,
 				7D5B9AD0223A00DC00C27382 /* filter-active.png in Resources */,
 				7D10BAB9222F609500632B13 /* Assets.xcassets in Resources */,
@@ -495,6 +494,7 @@
 				7D0A4238223E8C9400B3CF45 /* saturation.png in Resources */,
 				7D2136F5224B5DD200FB8242 /* slider-3.png in Resources */,
 				7D7B1668223E81CA00A6C6B2 /* text.png in Resources */,
+				7D213701224B64F300FB8242 /* plus-template.png in Resources */,
 				7D5B9AD4223A00DC00C27382 /* redo-icon.png in Resources */,
 				7D23BD2D2240C0F200A26B65 /* red-active.png in Resources */,
 				7D2136EB224B5CE700FB8242 /* template-active.png in Resources */,
