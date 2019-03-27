@@ -364,7 +364,7 @@ extension AdjustViewController: UICollectionViewDelegateFlowLayout {
             NotificationCenter.default.post(name: Notification.Name("tone"), object: nil)
         }
         else if (indexPath.row == self.adjustArray.count - 1) {
-            NotificationCenter.default.post(name: Notification.Name("payment"), object: nil)
+//            NotificationCenter.default.post(name: Notification.Name("payment"), object: nil)
         }
         else if (indexPath.row == 7) {
 //            self.selectedImage.image = applyGrainTo()

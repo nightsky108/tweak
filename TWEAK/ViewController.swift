@@ -113,6 +113,8 @@ extension ViewController: UICollectionViewDataSource {
 //        cell.setData(text: self.dataArray[indexPath.row])
         cell.layer.cornerRadius = cell.frame.width / 20.0
         cell.img.image = self.imageArray[indexPath.row]
+        cell.img.contentMode = .scaleAspectFill
+        cell.img.layer.masksToBounds = true
   
         if (indexPath == self.selectedCellNo) {
 //            let tintView = UIView()

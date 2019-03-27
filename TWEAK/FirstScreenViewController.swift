@@ -10,9 +10,11 @@ import UIKit
 
 class FirstScreenViewController: UIViewController {
 
+    @IBOutlet weak var slider: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        self.slider.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
         let recognizer = UISwipeGestureRecognizer(target: self, action: #selector(FirstScreenViewController.swipeLeft))
         recognizer.direction = .left
         self.view.addGestureRecognizer(recognizer)

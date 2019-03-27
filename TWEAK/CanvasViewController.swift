@@ -302,18 +302,18 @@ extension CanvasViewController: UICollectionViewDelegateFlowLayout {
         self.canvasActiveNo = indexPath.row
        
         if (indexPath.row == self.canvasArray.count - 1) {
-            NotificationCenter.default.post(name: Notification.Name("payment"), object: nil)
+//            NotificationCenter.default.post(name: Notification.Name("payment"), object: nil)
         }
         
-        let croppedImage = self.cropToBounds(image: (self.updatedImage)!, width: 300.34, height: 200.34)
-        
-        let white = UIColor.black
-        let backgroundSize = CGSize(width: self.selectedImage.frame.size.width , height: self.selectedImage.frame.size.height)
-        let backgroundImage = self.makeImageWithColor(white, size: backgroundSize)
-        
-        let updatedImage = self.imageByCombiningImage(firstImage: backgroundImage,  secondImage:  croppedImage)
-        self.updatedImage = croppedImage
-        self.selectedImage.image = updatedImage
+//        let croppedImage = self.cropToBounds(image: (self.updatedImage)!, width: 300.34, height: 200.34)
+//        
+//        let white = UIColor.black
+//        let backgroundSize = CGSize(width: self.selectedImage.frame.size.width , height: self.selectedImage.frame.size.height)
+//        let backgroundImage = self.makeImageWithColor(white, size: backgroundSize)
+//        
+//        let updatedImage = self.imageByCombiningImage(firstImage: backgroundImage,  secondImage:  croppedImage)
+//        self.updatedImage = croppedImage
+//        self.selectedImage.image = updatedImage
         //            let heiConstraint = NSLayoutConstraint(item: sliderView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 56.0)
         //            self.sliderView.addConstraint(heiConstraint)
         canvasCollectionView.reloadData()

@@ -37,8 +37,13 @@ class FilterViewController: UIViewController {
         Filter(filterName: "CICMYKHalftone", filterEffectValue: 0.9, filterEffectValueName: "inputUCR"),
         Filter(filterName: "CIVignetteEffect", filterEffectValue: 0.9, filterEffectValueName: "inputIntensity"),
         Filter(filterName: "CIVignette", filterEffectValue: 0.9, filterEffectValueName: "inputIntensity"),
-        Filter(filterName: "CIColorPosterize", filterEffectValue: 0.9, filterEffectValueName: "inputLevels"),
-        Filter(filterName: "CIColorMonochrome", filterEffectValue: 0.9, filterEffectValueName: "inputIntensity")
+        Filter(filterName: "CIColorMonochrome", filterEffectValue: 0.9, filterEffectValueName: "inputIntensity"),
+        Filter(filterName: "CIPhotoEffectTransfer", filterEffectValue: nil, filterEffectValueName: nil),
+        Filter(filterName: "CIPhotoEffectTonal", filterEffectValue: nil, filterEffectValueName: nil),
+        Filter(filterName: "CIPhotoEffectProcess", filterEffectValue: nil, filterEffectValueName: nil),
+        Filter(filterName: "CIPhotoEffectNoir", filterEffectValue: nil, filterEffectValueName: nil),
+        Filter(filterName: "CIPhotoEffectMono", filterEffectValue: nil, filterEffectValueName: nil),
+        Filter(filterName: "CIPhotoEffectInstant", filterEffectValue: nil, filterEffectValueName: nil)
     ]
     
     @IBAction func setIntensity(_ sender: UISlider) {
@@ -49,34 +54,6 @@ class FilterViewController: UIViewController {
         
         self.updatedImage = applyFilterTo(image: image, filterEffect: Filter( filterName: filters[self.filterActiveNo].filterName, filterEffectValue: intensity * 1, filterEffectValueName: filters[self.filterActiveNo].filterEffectValueName))
         self.selectedImage.image = self.updatedImage
-    }
-    
-    private func applyFilterTo1(image: UIImage, filterEffect: Filter) -> UIImage? {
-        guard let cgImage = image.cgImage,
-            let openGLContext = EAGLContext(api: .openGLES3) else {
-                return nil
-        }
-        
-//        let context = CIContext(eaglContext: openGLContext)
-        let context = CIContext(options: nil)
-        let ciImage = CIImage(cgImage: cgImage)
-        let filter = CIFilter(name: filterEffect.filterName)
-        
-        filter?.setValue(ciImage, forKey: kCIInputImageKey)
-        
-        if let filterEffectValue = filterEffect.filterEffectValue,
-            let filterEffectValueName = filterEffect.filterEffectValueName {
-            filter?.setValue(filterEffectValue, forKey: filterEffectValueName)
-        }
-        
-        var filteredImage: UIImage?
-        
-        if let output = filter?.value(forKey: kCIInputImageKey) as? CIImage,
-            let cgiImageResult = context.createCGImage(output, from: output.extent) {
-            filteredImage = UIImage(cgImage: cgiImageResult)
-        }
-        
-        return filteredImage
     }
     
     private func applyFilterTo(image: UIImage, filterEffect: Filter) -> UIImage? {
@@ -155,9 +132,15 @@ extension  FilterViewController:UICollectionViewDelegate, UICollectionViewDataSo
         
         if (indexPath.row != self.filterActiveNo) {
             cell.img.image = applyFilterTo(image: self.image!, filterEffect: filters[indexPath.row])
+            cell.img.layer.masksToBounds = true
+            cell.img.layer.borderWidth = CGFloat(0.0)
+            cell.img.layer.borderColor = UIColor.green.cgColor
         }
         else {
-            cell.img.image = self.image
+            cell.img.image = applyFilterTo(image: self.image!, filterEffect: filters[indexPath.row])
+            cell.img.layer.masksToBounds = true
+            cell.img.layer.borderWidth = CGFloat(2.0)
+            cell.img.layer.borderColor = UIColor.green.cgColor
         }
         
         return cell
