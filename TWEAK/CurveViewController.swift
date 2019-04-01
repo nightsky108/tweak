@@ -10,6 +10,14 @@ import UIKit
 
 class CurveViewController: UIViewController {
 
+    @IBOutlet weak var blueLabel: UILabel!
+    @IBOutlet weak var greenLabel: UILabel!
+    @IBOutlet weak var redLabel: UILabel!
+    @IBOutlet weak var rgbLabel: UILabel!
+    @IBOutlet weak var blueImg: UIImageView!
+    @IBOutlet weak var greenImg: UIImageView!
+    @IBOutlet weak var redImg: UIImageView!
+    @IBOutlet weak var rgbImg: UIImageView!
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var rgbButton: UIButton!
     @IBOutlet weak var redButton: UIButton!
@@ -27,29 +35,54 @@ class CurveViewController: UIViewController {
     var blueIconActive = UIImage(named: "blue-active.png")
     var removeImage = UIImage(named: "remove.png")
     
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
     @IBAction func blueProcess(_ sender: Any) {
-        rgbButton.setImage(rgbIcon, for: .normal)
-        redButton.setImage(redIcon, for: .normal)
-        greenButton.setImage(greenIcon, for: .normal)
-        blueButton.setImage(blueIconActive, for: .normal)
+        rgbImg.image = rgbIcon
+        redImg.image = redIcon
+        greenImg.image = greenIcon
+        blueImg.image = blueIconActive
+        rgbLabel.textColor = UIColor.white
+        redLabel.textColor = UIColor.white
+        greenLabel.textColor = UIColor.white
+        blueLabel.textColor = UIColorFromRGB(rgbValue: 0x28e8f3)
     }
     @IBAction func greenProcess(_ sender: Any) {
-        rgbButton.setImage(rgbIcon, for: .normal)
-        redButton.setImage(redIcon, for: .normal)
-        greenButton.setImage(greenIconActive, for: .normal)
-        blueButton.setImage(blueIcon, for: .normal)
+        rgbImg.image = rgbIcon
+        redImg.image = redIcon
+        greenImg.image = greenIconActive
+        blueImg.image = blueIcon
+        rgbLabel.textColor = UIColor.white
+        redLabel.textColor = UIColor.white
+        greenLabel.textColor = UIColorFromRGB(rgbValue: 0x28e8f3)
+        blueLabel.textColor = UIColor.white
     }
     @IBAction func redProcess(_ sender: Any) {
-        rgbButton.setImage(rgbIcon, for: .normal)
-        redButton.setImage(redIconActive, for: .normal)
-        greenButton.setImage(greenIcon, for: .normal)
-        blueButton.setImage(blueIcon, for: .normal)
+        rgbImg.image = rgbIcon
+        redImg.image = redIconActive
+        greenImg.image = greenIcon
+        blueImg.image = blueIcon
+        rgbLabel.textColor = UIColor.white
+        redLabel.textColor = UIColorFromRGB(rgbValue: 0x28e8f3)
+        greenLabel.textColor = UIColor.white
+        blueLabel.textColor = UIColor.white
     }
     @IBAction func rgbProcess(_ sender: Any) {
-        rgbButton.setImage(rgbIconActive, for: .normal)
-        redButton.setImage(redIcon, for: .normal)
-        greenButton.setImage(greenIcon, for: .normal)
-        blueButton.setImage(blueIcon, for: .normal)
+        rgbImg.image = rgbIconActive
+        redImg.image = redIcon
+        greenImg.image = greenIcon
+        blueImg.image = blueIcon
+        rgbLabel.textColor = UIColorFromRGB(rgbValue: 0x28e8f3)
+        redLabel.textColor = UIColor.white
+        greenLabel.textColor = UIColor.white
+        blueLabel.textColor = UIColor.white
     }
     @IBAction func done(_ sender: Any) {
         NotificationCenter.default.post(name: Notification.Name("adjust"), object: nil)

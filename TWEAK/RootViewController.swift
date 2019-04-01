@@ -10,6 +10,14 @@ import UIKit
 
 class RootViewController: UIViewController {
 
+    @IBOutlet weak var filterLabel: UILabel!
+    @IBOutlet weak var adjustLabel: UILabel!
+    @IBOutlet weak var canvasLabel: UILabel!
+    @IBOutlet weak var templateLabel: UILabel!
+    @IBOutlet weak var templateImg: UIImageView!
+    @IBOutlet weak var canvasImg: UIImageView!
+    @IBOutlet weak var adjustImg: UIImageView!
+    @IBOutlet weak var filterImg: UIImageView!
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var filterButton: UIButton!
@@ -38,10 +46,17 @@ class RootViewController: UIViewController {
     
     @IBAction func filterAction(_ sender: Any) {
         self.currrentMenuState = "filter"
-        filterButton.setImage(filterIconActive, for: .normal)
-        canvasButton.setImage(canvasIcon, for: .normal)
-        adjustButton.setImage(adjustIcon, for: .normal)
-        templateButton.setImage(templateIcon, for: .normal)
+
+        filterImg.image = filterIconActive
+        adjustImg.image = adjustIcon
+        canvasImg.image = canvasIcon
+        templateImg.image = templateIcon
+        
+        filterLabel.textColor = UIColorFromRGB(rgbValue: 0x28e8f3)
+        adjustLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        templateLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        canvasLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        
         filterViewController.view.isHidden = false
         adjustViewController.view.isHidden = true
         canvasViewController.view.isHidden = true
@@ -55,10 +70,17 @@ class RootViewController: UIViewController {
     
     @IBAction func templateAction(_ sender: Any) {
         self.currrentMenuState = "template"
-        filterButton.setImage(filterIcon, for: .normal)
-        canvasButton.setImage(canvasIcon, for: .normal)
-        adjustButton.setImage(adjustIcon, for: .normal)
-        templateButton.setImage(templateIconActive, for: .normal)
+        
+        filterImg.image = filterIcon
+        adjustImg.image = adjustIcon
+        canvasImg.image = canvasIcon
+        templateImg.image = templateIconActive
+        
+        filterLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        adjustLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        templateLabel.textColor = UIColorFromRGB(rgbValue: 0x28e8f3)
+        canvasLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        
         filterViewController.view.isHidden = true
         adjustViewController.view.isHidden = true
         canvasViewController.view.isHidden = true
@@ -71,10 +93,17 @@ class RootViewController: UIViewController {
     
     @IBAction func adjustAction(_ sender: Any) {
         self.currrentMenuState = "adjust"
-        filterButton.setImage(filterIcon, for: .normal)
-        canvasButton.setImage(canvasIcon, for: .normal)
-        adjustButton.setImage(adjustIconActive, for: .normal)
-        templateButton.setImage(templateIcon, for: .normal)
+        
+        filterImg.image = filterIcon
+        adjustImg.image = adjustIconActive
+        canvasImg.image = canvasIcon
+        templateImg.image = templateIcon
+        
+        filterLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        adjustLabel.textColor = UIColorFromRGB(rgbValue: 0x28e8f3)
+        templateLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        canvasLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        
         filterViewController.view.isHidden = true
         adjustViewController.view.isHidden = false
         canvasViewController.view.isHidden = true
@@ -88,10 +117,16 @@ class RootViewController: UIViewController {
     
     @IBAction func canvasAction(_ sender: Any) {
         self.currrentMenuState = "canvas"
-        filterButton.setImage(filterIcon, for: .normal)
-        canvasButton.setImage(canvasIconActive, for: .normal)
-        adjustButton.setImage(adjustIcon, for: .normal)
-        templateButton.setImage(templateIcon, for: .normal)
+        
+        filterImg.image = filterIcon
+        adjustImg.image = adjustIcon
+        canvasImg.image = canvasIconActive
+        templateImg.image = templateIcon
+        filterLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        adjustLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        templateLabel.textColor = UIColorFromRGB(rgbValue: 0xc6c6c6)
+        canvasLabel.textColor = UIColorFromRGB(rgbValue: 0x28e8f3)
+        
         filterViewController.view.isHidden = true
         adjustViewController.view.isHidden = true
         canvasViewController.view.isHidden = false
@@ -100,6 +135,15 @@ class RootViewController: UIViewController {
         toneViewController.view.isHidden = true
         templateTypeViewController.view.isHidden = true
         templateColorViewController.view.isHidden = true
+    }
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
     
     lazy var filterViewController: FilterViewController = {

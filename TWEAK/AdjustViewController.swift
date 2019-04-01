@@ -10,6 +10,28 @@ import UIKit
 
 class AdjustViewController: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.filterCollectionView.delegate = self
+        self.filterCollectionView.dataSource = self
+        self.selectedImage.image = self.image
+        self.updatedImage = self.image
+        
+        //        self.sliderView.isHidden = true
+        //        let heiConstraint = NSLayoutConstraint(item: sliderView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0.0)
+        //        self.sliderView.addConstraint(heiConstraint)
+        
+        // Do any additional setup after loading the view.
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.filterCollectionView.reloadData()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     @IBAction func savePhoto(_ sender: Any) {
         UIImageWriteToSavedPhotosAlbum(self.updatedImage!, nil, nil, nil)
         let alert = UIAlertController(title: "Saved", message: "Photo has been saved", preferredStyle: .alert)
@@ -67,23 +89,26 @@ class AdjustViewController: UIViewController {
     }
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var sliderView: UIView!
-    @IBOutlet weak var filterCollectionView: UICollectionView!
-    var adjustActiveNo = 1
+    @IBOutlet var filterCollectionView: UICollectionView!
+    var adjustActiveNo = 0
     var imageArray = [UIImage]()
     var image : UIImage?
     var updatedImage : UIImage?
     
-    var adjustArray = [UIImage(named: "curves.png"), UIImage(named: "tone.png"),
-                       UIImage(named: "exposure.png"), UIImage(named: "contrast.png"),
-                       UIImage(named: "shadow.png"), UIImage(named: "highlights.png"), UIImage(named: "saturation.png"), UIImage(named: "grain.png"), UIImage(named: "temperature.png"), UIImage(named: "sharpen.png"), UIImage(named: "straighten.png"), UIImage(named: "crop.png"), UIImage(named: "clear_edit.png")]
+    var adjustArray = [UIImage(named: "curves.png"), UIImage(named: "ton.png"),
+                       UIImage(named: "exposure.png"), UIImage(named: "contrast1.png"),
+                       UIImage(named: "shadow.png"), UIImage(named: "highlights.png"), UIImage(named: "saturation1.png"), UIImage(named: "grain.png"), UIImage(named: "temperature.png"), UIImage(named: "sharpen.png"), UIImage(named: "strighten.png"), UIImage(named: "crop.png"), UIImage(named: "clear-edit.png")]
     
-    var adjustActiveArray = [UIImage(named: "curve-active.png"), UIImage(named: "tone-active.png"),
+    var adjustNameArray = ["CURVES", "TONES", "EXPOSURE", "CONTRAST", "SHADOW", "HIGHLIGHTS", "SATURATION", "GRAIN",
+                           "TEMPERATURE", "SHARPEN", "STRIGHTEN", "CROP", "CLEAR EDIT"]
+    
+    var adjustActiveArray = [UIImage(named: "curves-active.png"), UIImage(named: "ton-active.png"),
                              UIImage(named: "exposure-active.png"), UIImage(named: "contrast-active.png"),
-                             UIImage(named: "shadow-active.png"), UIImage(named: "highlights-active.png"),
-                             UIImage(named: "saturation-active.png"), UIImage(named: "grain-active.png"),
+                             UIImage(named: "shadow-active.png"), UIImage(named: "highlights1-active.png"),
+                             UIImage(named: "saturation1-active.png"), UIImage(named: "grain-active.png"),
                              UIImage(named: "temperature-active.png"), UIImage(named: "sharpen-active.png"),
-                             UIImage(named: "straighten-active.png"), UIImage(named: "crop-active.png"),
-                             UIImage(named: "clear_edit-active.png")]
+                             UIImage(named: "strighten-active.png"), UIImage(named: "crop-active.png"),
+                             UIImage(named: "clear-edit-active.png")]
     
     private func applyFilterTo(image: UIImage, filterEffect: Filter) -> UIImage? {
         let inputImage = self.image!
@@ -292,50 +317,80 @@ class AdjustViewController: UIViewController {
         return processedImage
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.filterCollectionView.delegate = self
-        self.filterCollectionView.dataSource = self
-        self.selectedImage.image = self.image
-        self.updatedImage = self.image
-//        self.sliderView.isHidden = true
-//        let heiConstraint = NSLayoutConstraint(item: sliderView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1.0, constant: 0.0)
-//        self.sliderView.addConstraint(heiConstraint)
-
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
 
 extension  AdjustViewController:UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+   
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print(indexPath.row)
+        self.filterCollectionView.register(UINib.init(nibName: "AdjustCell", bundle: nil), forCellWithReuseIdentifier: "AdjustCell")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AdjustCell", for: indexPath) as! AdjustCell
+
+        print(cell)
+        print(indexPath)
         
-        let cell = filterCollectionView.dequeueReusableCell(withReuseIdentifier: "AdjustCell", for: indexPath) as! AdjustCell
+        cell.img.addConstraint(NSLayoutConstraint(item: cell.img, attribute: .height, relatedBy: .equal, toItem: cell.img, attribute: .width, multiplier: 16.0 / 16.0, constant: 0
+        ))
+
+        cell.imgCover.layer.sublayers?.removeAll()
+        
         if (indexPath.row != self.adjustActiveNo) {
             cell.img.image = self.adjustArray[indexPath.row]
+            cell.name.text = adjustNameArray[indexPath.row]
+            cell.name.textColor = UIColorFromRGB(rgbValue: 0xffffff)
+            cell.name.font = UIFont.systemFont(ofSize: 9)
+            cell.imgCover.layer.borderWidth = CGFloat(1.0)
+            cell.imgCover.layer.borderColor = UIColorFromRGB(rgbValue: 0xc6c6c6).cgColor
+            cell.imgCover.layer.cornerRadius = cell.frame.size.width * 0.1
+ 
+            
         }
         else {
             cell.img.image = self.adjustActiveArray[indexPath.row]
+            cell.name.text = adjustNameArray[indexPath.row]
+            cell.name.textColor = UIColorFromRGB(rgbValue: 0x28e8f3)
+            cell.name.font = UIFont.boldSystemFont(ofSize: 9)
+            cell.imgCover.layer.borderWidth = CGFloat(0.0)
+
+            cell.imgCover.layer.masksToBounds = true
+            cell.imgCover.layer.cornerRadius = cell.frame.size.width * 0.1
+            cell.imgCover.layer.sublayers?.removeAll()
+            let gradient = CAGradientLayer()
+            gradient.frame =  cell.imgCover.bounds
+            gradient.colors = [UIColorFromRGB(rgbValue: 0x28e8f3).cgColor, UIColorFromRGB(rgbValue: 0xfc4cfd).cgColor]
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x: 1, y: 1)
+            
+            let shape = CAShapeLayer()
+            shape.lineWidth = 4
+            shape.path = UIBezierPath(roundedRect: cell.imgCover.bounds, cornerRadius: cell.frame.size.width * 0.1).cgPath
+            shape.strokeColor = UIColor.black.cgColor
+            shape.fillColor = UIColor.clear.cgColor
+            gradient.mask = shape
+            
+            cell.imgCover.layer.insertSublayer(gradient, at: 0)
+
+            
+
         }
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+
+        }
         return cell
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -350,8 +405,8 @@ extension AdjustViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var height = 0.0
-        height = Double(filterCollectionView.frame.height * 0.8)
-        return CGSize(width: height * 0.8, height: height)
+        height = Double(filterCollectionView.frame.height * 1)
+        return CGSize(width: height * 0.7, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -383,4 +438,47 @@ extension AdjustViewController: UICollectionViewDelegateFlowLayout {
     }
     
     
+}
+
+enum Direction {
+    case horizontal
+    case vertical
+}
+
+class View: UIView {
+    
+    init(frame: CGRect, cornerRadius: CGFloat, colors: [UIColor], lineWidth: CGFloat = 5, direction: Direction = .horizontal) {
+        super.init(frame: frame)
+        
+        self.layer.cornerRadius = cornerRadius
+        self.layer.masksToBounds = true
+        let gradient = CAGradientLayer()
+        gradient.frame = CGRect(origin: CGPoint.zero, size: self.frame.size)
+        gradient.colors = colors.map({ (color) -> CGColor in
+            color.cgColor
+        })
+        
+        switch direction {
+        case .horizontal:
+            gradient.startPoint = CGPoint(x: 0, y: 1)
+            gradient.endPoint = CGPoint(x: 1, y: 1)
+        case .vertical:
+            gradient.startPoint = CGPoint(x: 0, y: 0)
+            gradient.endPoint = CGPoint(x: 0, y: 1)
+        }
+        
+        let shape = CAShapeLayer()
+        shape.lineWidth = lineWidth
+        shape.path = UIBezierPath(roundedRect: self.bounds.insetBy(dx: lineWidth,
+                                                                   dy: lineWidth), cornerRadius: cornerRadius).cgPath
+        shape.strokeColor = UIColor.black.cgColor
+        shape.fillColor = UIColor.clear.cgColor
+        gradient.mask = shape
+        
+        self.layer.addSublayer(gradient)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

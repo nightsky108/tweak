@@ -86,7 +86,7 @@ class FilterViewController: UIViewController {
     }
     
     @IBOutlet weak var selectedImage: UIImageView!
-    var filterActiveNo = 0
+    var filterActiveNo = 100
     var imageArray = [UIImage]()
     var image : UIImage?
     var updatedImage : UIImage?
@@ -125,22 +125,62 @@ class FilterViewController: UIViewController {
 
 
 extension  FilterViewController:UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = filterCollectionView.dequeueReusableCell(withReuseIdentifier: "FilterCell", for: indexPath) as! FilterCell
-        cell.img.layer.cornerRadius = cell.frame.width / 20.0
+        self.filterCollectionView.register(UINib.init(nibName: "FilterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FilterCell")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCell", for: indexPath) as! FilterCollectionViewCell
+        
+        cell.img.contentMode = .scaleAspectFill
+        cell.img.layer.sublayers?.removeAll()
         
         if (indexPath.row != self.filterActiveNo) {
             cell.img.image = applyFilterTo(image: self.image!, filterEffect: filters[indexPath.row])
+            
+            cell.img.layer.borderWidth = CGFloat(1.0)
+            cell.img.layer.borderColor = UIColor.black.cgColor
+            cell.img.layer.cornerRadius = cell.frame.size.width * 0.1
             cell.img.layer.masksToBounds = true
-            cell.img.layer.borderWidth = CGFloat(0.0)
-            cell.img.layer.borderColor = UIColor.green.cgColor
+            cell.filterName.text = "FILTER"
+            cell.filterName.textColor = UIColor.white
+            cell.filterName.font = UIFont.systemFont(ofSize: 14)
         }
         else {
             cell.img.image = applyFilterTo(image: self.image!, filterEffect: filters[indexPath.row])
+            cell.filterName.text = "FILTER"
+            cell.filterName.textColor = UIColorFromRGB(rgbValue: 0x28e8f3)
+            cell.filterName.font = UIFont.boldSystemFont(ofSize: 14)
             cell.img.layer.masksToBounds = true
-            cell.img.layer.borderWidth = CGFloat(2.0)
-            cell.img.layer.borderColor = UIColor.green.cgColor
+            cell.img.layer.borderWidth = CGFloat(0.0)
+            cell.img.layer.cornerRadius = cell.frame.size.width * 0.1
+            cell.img.layer.sublayers?.removeAll()
+            let gradient = CAGradientLayer()
+            gradient.frame =  cell.img.bounds
+            gradient.colors = [UIColorFromRGB(rgbValue: 0x28e8f3).cgColor, UIColorFromRGB(rgbValue: 0xfc4cfd).cgColor]
+            gradient.startPoint = CGPoint(x: 0, y: 0.5)
+            gradient.endPoint = CGPoint(x: 1, y: 0.5)
+            
+            let shape = CAShapeLayer()
+            shape.lineWidth = 5
+            shape.path = UIBezierPath(roundedRect: cell.img.bounds, cornerRadius: cell.frame.size.width * 0.1).cgPath
+            shape.strokeColor = UIColor.black.cgColor
+            shape.fillColor = UIColor.clear.cgColor
+            gradient.mask = shape
+            
+            cell.img.layer.insertSublayer(gradient, at: 0)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
         }
         
         return cell
@@ -159,8 +199,8 @@ extension FilterViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var height = 0.0
-        height = Double(filterCollectionView.frame.height * 0.8)
-        return CGSize(width: height * 0.9, height: height)
+        height = Double(filterCollectionView.frame.height * 1.0)
+        return CGSize(width: height * 0.7, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

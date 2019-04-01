@@ -10,10 +10,14 @@ import UIKit
 
 class AdjustCell: UICollectionViewCell {
 
+    @IBOutlet weak var imgCover: UIView!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var img: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    
+    
 }

@@ -17,7 +17,7 @@ class ProjectBrowserViewController: UIViewController {
     
     var cellMarginSize = 20.0
     var imageArray = [UIImage]()
-    var selectedCellNo = IndexPath(row: 200, section: 0)
+    var selectedCellNo = 200
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,27 +95,66 @@ extension ProjectBrowserViewController: UICollectionViewDataSource {
         return self.imageArray.count
     }
     
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCell
-        //        cell.setData(text: self.dataArray[indexPath.row])
-        cell.layer.cornerRadius = cell.frame.width / 20.0
-        cell.img.image = self.imageArray[indexPath.row]
-        cell.img.contentMode = .scaleAspectFill
-        cell.img.layer.masksToBounds = true
+        self.collectionView.register(UINib.init(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "ImageCell")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCell
         
-        if (indexPath == self.selectedCellNo) {
+        cell.img.contentMode = .scaleAspectFill
+        cell.img.layer.sublayers?.removeAll()
+        
+        if (indexPath.row != self.selectedCellNo) {
+            cell.img.image = self.imageArray[indexPath.row]
+            
+            cell.img.layer.borderWidth = CGFloat(1.0)
+            cell.img.layer.borderColor = UIColor.black.cgColor
+            cell.img.layer.cornerRadius = cell.frame.width / 20.0
             cell.img.layer.masksToBounds = true
-            cell.img.layer.borderWidth = CGFloat(7.0)
-            cell.img.layer.borderColor = UIColor.red.cgColor
-            
-            
+            cell.check.isHidden = true
             
         }
         else {
+            cell.img.image = self.imageArray[indexPath.row]
+            
+            cell.check.isHidden = false
+            let maskPath1 = UIBezierPath(roundedRect: cell.check.bounds,
+                                         byRoundingCorners: [.bottomRight],
+                                         cornerRadii: CGSize(width: cell.frame.width / 20.0, height: cell.frame.width / 20.0))
+            let maskLayer1 = CAShapeLayer()
+            maskLayer1.frame = cell.check.bounds
+            maskLayer1.path = maskPath1.cgPath
+            cell.check.layer.mask = maskLayer1
+            
             cell.img.layer.masksToBounds = true
             cell.img.layer.borderWidth = CGFloat(0.0)
-            cell.img.layer.borderColor = UIColor.red.cgColor
+            cell.img.layer.cornerRadius = cell.frame.width / 20.0
+            cell.img.layer.sublayers?.removeAll()
+            let gradient = CAGradientLayer()
+            gradient.frame =  cell.img.bounds
+            gradient.colors = [UIColorFromRGB(rgbValue: 0x28e8f3).cgColor, UIColorFromRGB(rgbValue: 0xfc4cfd).cgColor]
+            gradient.startPoint = CGPoint(x: 0, y: 0.5)
+            gradient.endPoint = CGPoint(x: 1, y: 0.5)
+            
+            let shape = CAShapeLayer()
+            shape.lineWidth = 5
+            shape.path = UIBezierPath(roundedRect: cell.img.bounds, cornerRadius: cell.frame.width / 20.0).cgPath
+            shape.strokeColor = UIColor.black.cgColor
+            shape.fillColor = UIColor.clear.cgColor
+            gradient.mask = shape
+            
+            cell.img.layer.insertSublayer(gradient, at: 0)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             
         }
         
@@ -137,7 +176,7 @@ extension ProjectBrowserViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         print(indexPath.row)
-        self.selectedCellNo = indexPath
+        self.selectedCellNo = indexPath.row
         self.collectionView.reloadData()
  
     }
