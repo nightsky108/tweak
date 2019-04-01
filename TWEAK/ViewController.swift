@@ -16,8 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let dataArray = ["AAA", "BBB", "CCC", "DDD", "EEE", "FFF", "GGG","AAA", "BBB", "CCC", "DDD", "EEE", "FFF","AAA", "BBB", "CCC", "DDD", "EEE", "FFF","AAA", "BBB", "CCC", "DDD", "EEE", "FFF"]
-    
+       
     var cellMarginSize = 10.0
     var imageArray = [UIImage]()
     var selectedCellNo = 0

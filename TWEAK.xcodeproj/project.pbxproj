@@ -17,11 +17,17 @@
 		7D10BABC222F609500632B13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D10BABA222F609500632B13 /* LaunchScreen.storyboard */; };
 		7D10BAC6222F623300632B13 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BAC4222F623300632B13 /* ItemCell.swift */; };
 		7D10BAC7222F623300632B13 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D10BAC5222F623300632B13 /* ItemCell.xib */; };
+		7D143E212252211300AFA1A9 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D143E202252210F00AFA1A9 /* menu.png */; };
+		7D1AF208225248240097345F /* canvas1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1AF207225248210097345F /* canvas1.png */; };
+		7D1AF20A225253630097345F /* contrast2-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1AF209225253610097345F /* contrast2-active.png */; };
+		7D1AF20C22525E080097345F /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1AF20B22525E020097345F /* album.png */; };
+		7D1AF20E2252612E0097345F /* text-new.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1AF20D2252612A0097345F /* text-new.png */; };
+		7D1AF2102252613A0097345F /* add-template-new.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1AF20F225261370097345F /* add-template-new.png */; };
+		7D1AF216225274050097345F /* add-photo-btn-new@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1AF215225274050097345F /* add-photo-btn-new@3x.png */; };
 		7D2136E1224B5BF800FB8242 /* highlights-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136E0224B5BF800FB8242 /* highlights-active.png */; };
 		7D2136E3224B5C0900FB8242 /* back-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136E2224B5C0900FB8242 /* back-icon.png */; };
 		7D2136E5224B5C8A00FB8242 /* curve-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136E4224B5C8A00FB8242 /* curve-active.png */; };
 		7D2136E7224B5CA300FB8242 /* tone-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136E6224B5CA300FB8242 /* tone-active.png */; };
-		7D2136ED224B5D2000FB8242 /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136EC224B5D2000FB8242 /* album.png */; };
 		7D2136EF224B5D2700FB8242 /* app-intro-top.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136EE224B5D2700FB8242 /* app-intro-top.png */; };
 		7D2136F1224B5D2F00FB8242 /* app-intro-bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136F0224B5D2F00FB8242 /* app-intro-bottom.png */; };
 		7D2136F5224B5DD200FB8242 /* slider-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D2136F4224B5DD100FB8242 /* slider-3.png */; };
@@ -104,8 +110,6 @@
 		7D27EC102252047D00F7031B /* add-photo-btn1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D27EC0F2252047D00F7031B /* add-photo-btn1@3x.png */; };
 		7D27EC122252067D00F7031B /* add-photo-btn2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D27EC112252067D00F7031B /* add-photo-btn2@3x.png */; };
 		7D34869F223264A100070BF9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D34869E223264A100070BF9 /* TabBarController.swift */; };
-		7D361933224E2338000E1116 /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D361931224E2332000E1116 /* menu@3x.png */; };
-		7D361934224E2338000E1116 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D361932224E2335000E1116 /* menu@2x.png */; };
 		7D361947224EB36D000E1116 /* canvas.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D361943224EB360000E1116 /* canvas.png */; };
 		7D361948224EB36D000E1116 /* filter-active.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D361944224EB364000E1116 /* filter-active.png */; };
 		7D361949224EB36D000E1116 /* template.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D361945224EB367000E1116 /* template.png */; };
@@ -186,11 +190,17 @@
 		7D10BABD222F609500632B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D10BAC4222F623300632B13 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		7D10BAC5222F623300632B13 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		7D143E202252210F00AFA1A9 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu.png; path = TWEAK/image/btn/menu.png; sourceTree = SOURCE_ROOT; };
+		7D1AF207225248210097345F /* canvas1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = canvas1.png; path = TWEAK/image/btn/canvas1.png; sourceTree = SOURCE_ROOT; };
+		7D1AF209225253610097345F /* contrast2-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "contrast2-active.png"; path = "TWEAK/image/adjust/contrast2-active.png"; sourceTree = SOURCE_ROOT; };
+		7D1AF20B22525E020097345F /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = album.png; path = TWEAK/image/btn/album.png; sourceTree = SOURCE_ROOT; };
+		7D1AF20D2252612A0097345F /* text-new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "text-new.png"; path = "TWEAK/image/template/text-new.png"; sourceTree = SOURCE_ROOT; };
+		7D1AF20F225261370097345F /* add-template-new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add-template-new.png"; path = "TWEAK/image/template/add-template-new.png"; sourceTree = SOURCE_ROOT; };
+		7D1AF215225274050097345F /* add-photo-btn-new@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add-photo-btn-new@3x.png"; path = "TWEAK/image/btn/add-photo-btn-new@3x.png"; sourceTree = SOURCE_ROOT; };
 		7D2136E0224B5BF800FB8242 /* highlights-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "highlights-active.png"; path = "dev/highlights-active.png"; sourceTree = SOURCE_ROOT; };
 		7D2136E2224B5C0900FB8242 /* back-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "back-icon.png"; path = "dev/back-icon.png"; sourceTree = SOURCE_ROOT; };
 		7D2136E4224B5C8A00FB8242 /* curve-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "curve-active.png"; path = "RGB/curve-active.png"; sourceTree = SOURCE_ROOT; };
 		7D2136E6224B5CA300FB8242 /* tone-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tone-active.png"; path = "RGB/tone-active.png"; sourceTree = SOURCE_ROOT; };
-		7D2136EC224B5D2000FB8242 /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = album.png; path = dev/album.png; sourceTree = SOURCE_ROOT; };
 		7D2136EE224B5D2700FB8242 /* app-intro-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-intro-top.png"; path = "dev/app-intro-top.png"; sourceTree = SOURCE_ROOT; };
 		7D2136F0224B5D2F00FB8242 /* app-intro-bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "app-intro-bottom.png"; path = "dev/app-intro-bottom.png"; sourceTree = SOURCE_ROOT; };
 		7D2136F4224B5DD100FB8242 /* slider-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider-3.png"; path = "RGB/slider-3.png"; sourceTree = SOURCE_ROOT; };
@@ -273,8 +283,6 @@
 		7D27EC0F2252047D00F7031B /* add-photo-btn1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add-photo-btn1@3x.png"; path = "TWEAK/image/btn/add-photo-btn1@3x.png"; sourceTree = SOURCE_ROOT; };
 		7D27EC112252067D00F7031B /* add-photo-btn2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add-photo-btn2@3x.png"; path = "TWEAK/image/btn/add-photo-btn2@3x.png"; sourceTree = SOURCE_ROOT; };
 		7D34869E223264A100070BF9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		7D361931224E2332000E1116 /* menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@3x.png"; path = "TWEAK/image/btn/menu@3x.png"; sourceTree = SOURCE_ROOT; };
-		7D361932224E2335000E1116 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "TWEAK/image/btn/menu@2x.png"; sourceTree = SOURCE_ROOT; };
 		7D361943224EB360000E1116 /* canvas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = canvas.png; path = TWEAK/image/btn/canvas.png; sourceTree = SOURCE_ROOT; };
 		7D361944224EB364000E1116 /* filter-active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filter-active.png"; path = "TWEAK/image/btn/filter-active.png"; sourceTree = SOURCE_ROOT; };
 		7D361945224EB367000E1116 /* template.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = template.png; path = TWEAK/image/btn/template.png; sourceTree = SOURCE_ROOT; };
@@ -598,6 +606,7 @@
 				7D36195F224FCE01000E1116 /* exposure.png */,
 				7D361973224FCE02000E1116 /* grain-active.png */,
 				7D36196E224FCE02000E1116 /* grain.png */,
+				7D1AF209225253610097345F /* contrast2-active.png */,
 				7D36196D224FCE01000E1116 /* highlights1-active.png */,
 				7D361960224FCE01000E1116 /* highlights.png */,
 				7D36195E224FCE01000E1116 /* saturation1-active.png */,
@@ -678,12 +687,13 @@
 				7D5B9AC6223A00D500C27382 /* collection-left.png */,
 				7D5B9AAA223A00BC00C27382 /* redo-icon.png */,
 				7D2136FA224B5F4D00FB8242 /* center.png */,
-				7D2136EC224B5D2000FB8242 /* album.png */,
 				7D2136EE224B5D2700FB8242 /* app-intro-top.png */,
 				7D2136F0224B5D2F00FB8242 /* app-intro-bottom.png */,
 				7D2136F4224B5DD100FB8242 /* slider-3.png */,
+				7D1AF20F225261370097345F /* add-template-new.png */,
 				7D2136FE224B5F6100FB8242 /* water.png */,
 				7D2136FC224B5F5500FB8242 /* right.png */,
+				7D1AF20D2252612A0097345F /* text-new.png */,
 				7D213700224B64F300FB8242 /* plus-template.png */,
 				7D2136E4224B5C8A00FB8242 /* curve-active.png */,
 				7D2136E2224B5C0900FB8242 /* back-icon.png */,
@@ -710,15 +720,17 @@
 		7DC381B7224E12A2008863E6 /* btn */ = {
 			isa = PBXGroup;
 			children = (
+				7D143E202252210F00AFA1A9 /* menu.png */,
 				7D27EC0F2252047D00F7031B /* add-photo-btn1@3x.png */,
-				7D361932224E2335000E1116 /* menu@2x.png */,
-				7D361931224E2332000E1116 /* menu@3x.png */,
 				7D361946224EB36A000E1116 /* adjust.png */,
 				7D361943224EB360000E1116 /* canvas.png */,
 				7D361944224EB364000E1116 /* filter-active.png */,
+				7D1AF215225274050097345F /* add-photo-btn-new@3x.png */,
 				7D27EC112252067D00F7031B /* add-photo-btn2@3x.png */,
 				7D361945224EB367000E1116 /* template.png */,
 				7D36194B224EBAAA000E1116 /* adjust-active.png */,
+				7D1AF207225248210097345F /* canvas1.png */,
+				7D1AF20B22525E020097345F /* album.png */,
 				7D36194C224EBAAD000E1116 /* canvas-active.png */,
 				7D361951224EC19B000E1116 /* filter.png */,
 				7D36194D224EBAAF000E1116 /* template-active.png */,
@@ -793,6 +805,7 @@
 				7D213734224BC20E00FB8242 /* 6-Film.png in Resources */,
 				7D361998224FCE22000E1116 /* blue.png in Resources */,
 				7D5B9AF0223A00DC00C27382 /* collection-left.png in Resources */,
+				7D1AF20C22525E080097345F /* album.png in Resources */,
 				7D21372F224BC20E00FB8242 /* 10-Film.png in Resources */,
 				7D213762224BC28F00FB8242 /* Polaroid-7.png in Resources */,
 				7D10BABC222F609500632B13 /* LaunchScreen.storyboard in Resources */,
@@ -805,6 +818,7 @@
 				7D361978224FCE02000E1116 /* saturation1-active.png in Resources */,
 				7D21376F224BC3EC00FB8242 /* TemplateCell.xib in Resources */,
 				7D27EC122252067D00F7031B /* add-photo-btn2@3x.png in Resources */,
+				7D1AF208225248240097345F /* canvas1.png in Resources */,
 				7D36199D224FCE22000E1116 /* green.png in Resources */,
 				7D361983224FCE02000E1116 /* clear-edit.png in Resources */,
 				7D36198B224FCE02000E1116 /* curves.png in Resources */,
@@ -820,7 +834,6 @@
 				7D213744224BC25700FB8242 /* Paper-8.png in Resources */,
 				7D21375F224BC28F00FB8242 /* Polaroid-2.png in Resources */,
 				7D213766224BC28F00FB8242 /* Polaroid-6.png in Resources */,
-				7D361933224E2338000E1116 /* menu@3x.png in Resources */,
 				7D361949224EB36D000E1116 /* template.png in Resources */,
 				7D36195A224EDC4C000E1116 /* luminance.png in Resources */,
 				7D361958224EDC4C000E1116 /* hue.png in Resources */,
@@ -828,12 +841,12 @@
 				7D213712224BC10600FB8242 /* Classic-8.png in Resources */,
 				7D213764224BC28F00FB8242 /* Polaroid-8.png in Resources */,
 				7D2136E3224B5C0900FB8242 /* back-icon.png in Resources */,
+				7D143E212252211300AFA1A9 /* menu.png in Resources */,
 				7D36194F224EBAB2000E1116 /* canvas-active.png in Resources */,
 				7D361979224FCE02000E1116 /* exposure.png in Resources */,
 				7D21372A224BC20E00FB8242 /* 2-Film.png in Resources */,
 				7D36199C224FCE22000E1116 /* rgb.png in Resources */,
 				7D2136F1224B5D2F00FB8242 /* app-intro-bottom.png in Resources */,
-				7D2136ED224B5D2000FB8242 /* album.png in Resources */,
 				7D361975224FCE02000E1116 /* shadow.png in Resources */,
 				7D361948224EB36D000E1116 /* filter-active.png in Resources */,
 				7D36198A224FCE02000E1116 /* ton-active.png in Resources */,
@@ -851,7 +864,6 @@
 				7D213715224BC10600FB8242 /* Classic-7.png in Resources */,
 				7D361982224FCE02000E1116 /* curves-active.png in Resources */,
 				7D3619A6224FCF42000E1116 /* zoom-out.png in Resources */,
-				7D361934224E2338000E1116 /* menu@2x.png in Resources */,
 				7D2136FB224B5F5000FB8242 /* center.png in Resources */,
 				7D21370F224BC10600FB8242 /* Classic-9.png in Resources */,
 				7D7B1664223E211300A6C6B2 /* saturation.png in Resources */,
@@ -879,6 +891,7 @@
 				7D36194E224EBAB2000E1116 /* adjust-active.png in Resources */,
 				7D213728224BC20E00FB8242 /* 7-Film.png in Resources */,
 				7D213733224BC20E00FB8242 /* 15-Film.png in Resources */,
+				7D1AF2102252613A0097345F /* add-template-new.png in Resources */,
 				7D213713224BC10600FB8242 /* Classic-1.png in Resources */,
 				7D2136EF224B5D2700FB8242 /* app-intro-top.png in Resources */,
 				7D213765224BC28F00FB8242 /* Polaroid-9.png in Resources */,
@@ -899,6 +912,7 @@
 				7D21372C224BC20E00FB8242 /* 9-Film.png in Resources */,
 				7D3619AC224FD764000E1116 /* add-template.png in Resources */,
 				7D36198E224FCE02000E1116 /* shadow-active.png in Resources */,
+				7D1AF20E2252612E0097345F /* text-new.png in Resources */,
 				7D23BD3F2240CDB000A26B65 /* CanvasCollectionViewCell.xib in Resources */,
 				7D36197F224FCE02000E1116 /* crop-active.png in Resources */,
 				7D5B9AF7223A00DC00C27382 /* remove-icon.png in Resources */,
@@ -908,6 +922,7 @@
 				7D36197E224FCE02000E1116 /* contrast-active.png in Resources */,
 				7D3619AB224FD764000E1116 /* colors.png in Resources */,
 				7D21375B224BC28F00FB8242 /* Polaroid-13.png in Resources */,
+				7D1AF216225274050097345F /* add-photo-btn-new@3x.png in Resources */,
 				7D27EC092251A8E100F7031B /* FilterCollectionViewCell.xib in Resources */,
 				7D5B9ADC223A00DC00C27382 /* download-icon.png in Resources */,
 				7D213743224BC25700FB8242 /* Paper-2.png in Resources */,
@@ -915,6 +930,7 @@
 				7D21374A224BC25700FB8242 /* Paper-4.png in Resources */,
 				7D361947224EB36D000E1116 /* canvas.png in Resources */,
 				7D21372E224BC20E00FB8242 /* 11-Film.png in Resources */,
+				7D1AF20A225253630097345F /* contrast2-active.png in Resources */,
 				7D27EC042250573E00F7031B /* TestCollectionViewCell.xib in Resources */,
 				7D361950224EBAB2000E1116 /* template-active.png in Resources */,
 				7D361952224EC19C000E1116 /* filter.png in Resources */,
