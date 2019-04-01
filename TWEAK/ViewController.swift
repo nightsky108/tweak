@@ -20,15 +20,19 @@ class ViewController: UIViewController {
     
     var cellMarginSize = 10.0
     var imageArray = [UIImage]()
-    var selectedCellNo = 500
+    var selectedCellNo = 0
     @IBAction func gotoDetail(_ sender: Any) {
-        performSegue(withIdentifier: "imageFilter", sender: self)
+        if (selectedCellNo != 500) {
+            performSegue(withIdentifier: "imageFilter", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! RootViewController
-        vc.imageArray = self.imageArray
-        vc.image = self.imageArray[self.selectedCellNo]
+        if (selectedCellNo != 500) {
+            let vc = segue.destination as! RootViewController
+            vc.imageArray = self.imageArray
+            vc.image = self.imageArray[self.selectedCellNo]
+        }
     }
    
     override func viewDidLoad() {

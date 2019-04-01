@@ -73,20 +73,57 @@ class TemplateTypeViewController: UIViewController {
 }
 
 extension  TemplateTypeViewController:UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        self.templateTypeCollectionView.register(UINib.init(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "ImageCell")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCell
+        cell.backgroundColor = UIColor.white
         
-        let cell = templateTypeCollectionView.dequeueReusableCell(withReuseIdentifier: "TemplateCell", for: indexPath) as! TemplateCell
+        cell.img.contentMode = .scaleAspectFill
+        cell.img.layer.sublayers?.removeAll()
+        
         if (indexPath.row != self.templateActiveNo) {
             cell.img.image = self.templateArray[indexPath.row]
-            cell.backgroundColor = UIColor.green
-            cell.layer.borderWidth = CGFloat(0.0)
-            cell.layer.borderColor = UIColor.red.cgColor
+            
+            cell.img.layer.borderWidth = CGFloat(1.0)
+            cell.img.layer.borderColor = UIColor.black.cgColor
+//            cell.img.layer.cornerRadius = cell.frame.size.width * 0.1
+            cell.img.layer.masksToBounds = true
         }
         else {
             cell.img.image = self.templateArray[indexPath.row]
-            cell.backgroundColor = UIColor.green
-            cell.layer.borderWidth = CGFloat(3.0)
-            cell.layer.borderColor = UIColor.red.cgColor
+            cell.img.layer.masksToBounds = true
+            cell.img.layer.borderWidth = CGFloat(0.0)
+//            cell.img.layer.cornerRadius = cell.frame.size.width * 0.1
+            cell.img.layer.sublayers?.removeAll()
+            let gradient = CAGradientLayer()
+            gradient.frame =  cell.img.bounds
+            gradient.colors = [UIColorFromRGB(rgbValue: 0x28e8f3).cgColor, UIColorFromRGB(rgbValue: 0xfc4cfd).cgColor]
+            gradient.startPoint = CGPoint(x: 0, y: 0.5)
+            gradient.endPoint = CGPoint(x: 1, y: 0.5)
+            
+            let shape = CAShapeLayer()
+            shape.lineWidth = 5
+            shape.path = UIBezierPath(roundedRect: cell.img.bounds, cornerRadius: cell.frame.size.width * 0.0).cgPath
+            shape.strokeColor = UIColor.black.cgColor
+            shape.fillColor = UIColor.clear.cgColor
+            gradient.mask = shape
+            
+            cell.img.layer.insertSublayer(gradient, at: 0)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
         }
         
         return cell

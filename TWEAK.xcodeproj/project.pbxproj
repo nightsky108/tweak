@@ -101,6 +101,8 @@
 		7D27EC092251A8E100F7031B /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D27EC072251A8E100F7031B /* FilterCollectionViewCell.xib */; };
 		7D27EC0D2251AE3000F7031B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D27EC0B2251AE3000F7031B /* ImageCell.swift */; };
 		7D27EC0E2251AE3000F7031B /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D27EC0C2251AE3000F7031B /* ImageCell.xib */; };
+		7D27EC102252047D00F7031B /* add-photo-btn1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D27EC0F2252047D00F7031B /* add-photo-btn1@3x.png */; };
+		7D27EC122252067D00F7031B /* add-photo-btn2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D27EC112252067D00F7031B /* add-photo-btn2@3x.png */; };
 		7D34869F223264A100070BF9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D34869E223264A100070BF9 /* TabBarController.swift */; };
 		7D361933224E2338000E1116 /* menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D361931224E2332000E1116 /* menu@3x.png */; };
 		7D361934224E2338000E1116 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D361932224E2335000E1116 /* menu@2x.png */; };
@@ -268,6 +270,8 @@
 		7D27EC072251A8E100F7031B /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		7D27EC0B2251AE3000F7031B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		7D27EC0C2251AE3000F7031B /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		7D27EC0F2252047D00F7031B /* add-photo-btn1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add-photo-btn1@3x.png"; path = "TWEAK/image/btn/add-photo-btn1@3x.png"; sourceTree = SOURCE_ROOT; };
+		7D27EC112252067D00F7031B /* add-photo-btn2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "add-photo-btn2@3x.png"; path = "TWEAK/image/btn/add-photo-btn2@3x.png"; sourceTree = SOURCE_ROOT; };
 		7D34869E223264A100070BF9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7D361931224E2332000E1116 /* menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@3x.png"; path = "TWEAK/image/btn/menu@3x.png"; sourceTree = SOURCE_ROOT; };
 		7D361932224E2335000E1116 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu@2x.png"; path = "TWEAK/image/btn/menu@2x.png"; sourceTree = SOURCE_ROOT; };
@@ -706,11 +710,13 @@
 		7DC381B7224E12A2008863E6 /* btn */ = {
 			isa = PBXGroup;
 			children = (
+				7D27EC0F2252047D00F7031B /* add-photo-btn1@3x.png */,
 				7D361932224E2335000E1116 /* menu@2x.png */,
 				7D361931224E2332000E1116 /* menu@3x.png */,
 				7D361946224EB36A000E1116 /* adjust.png */,
 				7D361943224EB360000E1116 /* canvas.png */,
 				7D361944224EB364000E1116 /* filter-active.png */,
+				7D27EC112252067D00F7031B /* add-photo-btn2@3x.png */,
 				7D361945224EB367000E1116 /* template.png */,
 				7D36194B224EBAAA000E1116 /* adjust-active.png */,
 				7D36194C224EBAAD000E1116 /* canvas-active.png */,
@@ -798,6 +804,7 @@
 				7D27EC0E2251AE3000F7031B /* ImageCell.xib in Resources */,
 				7D361978224FCE02000E1116 /* saturation1-active.png in Resources */,
 				7D21376F224BC3EC00FB8242 /* TemplateCell.xib in Resources */,
+				7D27EC122252067D00F7031B /* add-photo-btn2@3x.png in Resources */,
 				7D36199D224FCE22000E1116 /* green.png in Resources */,
 				7D361983224FCE02000E1116 /* clear-edit.png in Resources */,
 				7D36198B224FCE02000E1116 /* curves.png in Resources */,
@@ -879,6 +886,7 @@
 				7D23BD262240C0C700A26B65 /* green-active.png in Resources */,
 				7D361980224FCE02000E1116 /* contrast1.png in Resources */,
 				7D7B165C223CA59C00A6C6B2 /* splash.png in Resources */,
+				7D27EC102252047D00F7031B /* add-photo-btn1@3x.png in Resources */,
 				7D2136E7224B5CA300FB8242 /* tone-active.png in Resources */,
 				7D213730224BC20E00FB8242 /* 3-Film.png in Resources */,
 				7D213731224BC20E00FB8242 /* 13-Film.png in Resources */,
